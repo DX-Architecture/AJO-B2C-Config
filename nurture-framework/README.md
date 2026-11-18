@@ -37,6 +37,14 @@ Related pilot decks and extracts (Focus Areas, Event Modernization, RHEL pilot b
 | Conflicts | Marketo-only caps | Channel + journey caps — **not** aware of Marketo |
 | Measure | Program reports | CJA: AJO + web + Marketo baselines |
 
+## Architecture guides (this folder)
+
+| Doc | Purpose |
+|---|---|
+| [`marketo-vs-ajo-architecture.md`](marketo-vs-ajo-architecture.md) | Dual-runtime coexistence + excludes |
+| [`experience-pattern-migration-order.md`](experience-pattern-migration-order.md) | Which patterns move to AJO first |
+| [`nets-ladders-catapults-ajo.md`](nets-ladders-catapults-ajo.md) | Framework pillars → AJO journey types |
+
 ## Related docs in this repo
 
 - [`../docs/TRACKS.md`](../docs/TRACKS.md) — platform expansion vs journey build
@@ -44,9 +52,3 @@ Related pilot decks and extracts (Focus Areas, Event Modernization, RHEL pilot b
 - [`../docs/architecture/journey-build-requirements.md`](../docs/architecture/journey-build-requirements.md) — promo vs transactional settings
 - [`../docs/architecture/decisioning-items-offers-requirements.md`](../docs/architecture/decisioning-items-offers-requirements.md) — Decisioning + framework elevation depth
 - [`../docs/ops/platform-analysis-parking-lot.md`](../docs/ops/platform-analysis-parking-lot.md) — PA-03 Jump, PA-04 entry model, PA-08 exit criteria
-
-## Suggested next markdown in this folder
-
-- `marketo-vs-ajo-architecture.md` — dual-runtime coexistence + excludes
-- `experience-pattern-migration-order.md` — which patterns move first
-- `nets-ladders-catapults-ajo.md` — framework pillars → AJO journey types
