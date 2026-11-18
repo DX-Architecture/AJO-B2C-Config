@@ -1,11 +1,13 @@
 # AEP schemas / fields for AJO email personalization
 
-**Status:** Living inventory / sketch — **exact XDM paths must be confirmed in AEP** (Schema Registry + Personalization editor). Do not invent paths from CJA names.  
+**Status:** **WIP — need to confirm**  
+Most rows are still **mapping-doc** / candidate only. **Exact XDM paths must be confirmed in AEP** (Schema Registry + AJO Personalization editor) before production copy. Do not invent paths from CJA names. Only **Status = `verified`** rows (today: Marketable) are safe to ship.
+
 **Purpose:** One binder place for what profile (and related) fields are available — or needed — when personalizing AJO B2C emails.  
 **Related:** [PA-05 personalization](../ops/platform-analysis-parking-lot.md) · [Q1 onboarding sketch](../ops/ajo-permissions-user-onboarding-q1-sketch.md) · [Decisioning attrs](decisioning-items-offers-requirements.md) (catalog ≠ profile) · handbook event/profile contract notes  
 
 **Sandbox / env:** _TBD — prod vs non-prod_  
-**Last reviewed:** 2026-11-11 — Marketable verified in editor; **Marketo→AEP mapping v2** set as canonical reference  
+**Last reviewed:** 2026-11-18 — Status flagged WIP / need-to-confirm; Marketable still the only editor-verified path; **Marketo→AEP mapping v2** remains the candidate source
 
 **Sources**
 - Editor path tree: `../sources/aep-profile-b2b-redhat-marketable-path.png`

@@ -43,7 +43,7 @@ Treat each row as a future doc or runbook stub. Link finished artifacts here whe
 | **Best practice: Journey entry** | Promo vs transactional contract: [`../architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md); promo detail ([promo settings](../architecture/promotional-read-audience-settings.md); handbook §2.5.2) | Co-author | sketch + Learn Deep reference |
 | **Best practice: Namespace** | Jump + event journeys require coherent namespace (**PA-03**) | Co-author | sketch |
 | **Best practice: Audience selection** | Amanda Machado — who builds vs who requests; streaming vs batch | Amanda Machado | sketch |
-| **AEP fields for email personalization** | What `{{profile…}}` paths exist — living inventory | [`../architecture/aep-email-personalization-fields.md`](../architecture/aep-email-personalization-fields.md) | sketch |
+| **AEP fields for email personalization** | What `{{profile…}}` paths exist — living inventory | [`../architecture/aep-email-personalization-fields.md`](../architecture/aep-email-personalization-fields.md) | **WIP — need to confirm** (Marketable verified) |
 | **Tag structure (AEP/CDP/AJO B2C)** | Audience name pattern + AJO Unified Tag categories | [`aep-cdp-ajo-b2c-tag-structure-sketch.md`](aep-cdp-ajo-b2c-tag-structure-sketch.md) | sketch |
 | **Unitary event request (template)** | Where to file, required XDM fields — **IT builds** schema/dataset/event; DA requests + consumes. Gates exits (**PA-08**) & Trial Start–style journeys | DA requests · **IT builds** | sketch |
 | **How to request support** | MarTech / DA / Adobe escalation path | MarTech | sketch |

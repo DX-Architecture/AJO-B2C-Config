@@ -95,7 +95,7 @@ See [`RHEL-Trial-Experience.md`](RHEL-Trial-Experience.md).
 | Transactional unitary (pilot) | Same **`b2b_person`** · id = `personKey.sourceKey` · rule-based offerID condition — [txn settings](architecture/transactional-unitary-event-settings.md) |
 | Event journeys | Payload must carry a person identity AJO can stitch; same namespace family as the journey |
 | Marketable | Verified path: `profile.b2b._redhat.marketable` |
-| Fields inventory | [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md) |
+| Fields inventory | [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md) — **WIP / need to confirm** |
 | Business Rules / capping | Prefer highest-priority people namespace when caps are attached (Adobe warning) — separate from silent non-entry |
 
 ---
@@ -163,11 +163,10 @@ Until those BP pages exist, use this guide + handbook Ch2 + the two reference co
 | Transactional unitary settings | [`architecture/transactional-unitary-event-settings.md`](architecture/transactional-unitary-event-settings.md) |
 | Full promo vs txn build contract | [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) |
 | Tags / CDP naming | [`ops/aep-cdp-ajo-b2c-tag-structure-sketch.md`](ops/aep-cdp-ajo-b2c-tag-structure-sketch.md) |
-| Personalization field paths | [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md) |
+| Personalization field paths | [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md) (**WIP — need to confirm**) |
 | Q1 permissions / IT & process sketch | [`ops/ajo-permissions-user-onboarding-q1-sketch.md`](ops/ajo-permissions-user-onboarding-q1-sketch.md) |
 | **Decisioning — where offer / copy / placement live** | [`architecture/decisioning-quick-reference.md`](architecture/decisioning-quick-reference.md) |
 | Decisioning — full requirements (items, setup, placements, use cases) | [`architecture/decisioning-items-offers-requirements.md`](architecture/decisioning-items-offers-requirements.md) |
-| Partner newsletter — Distro offer catalog working sheet | [`architecture/partner-newsletter-offer-catalog-working-sheet.md`](architecture/partner-newsletter-offer-catalog-working-sheet.md) |
 
 Destination tag values in play: Marketo · Target · AJO-B2C · AJO-B2B · CJA.
 
@@ -203,4 +202,4 @@ Destination tag values in play: Marketo · Target · AJO-B2C · AJO-B2B · CJA.
 ---
 
 **Created:** 2026-11-18  
-**Last updated:** 2026-11-18 — §11 Partner newsletter Distro offer-catalog working sheet
+**Last updated:** 2026-11-18 — §11 Decisioning quick reference + full requirements as Team Guide resources
