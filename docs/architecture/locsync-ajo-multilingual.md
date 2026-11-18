@@ -5,7 +5,7 @@
 **Why separate:** LocSync is an RH translation backend (+ Express PoC). AJO Multilingual is locale storage/selection in Journey Optimizer. Compatibility work is ops/content localization — not the same as Decisioning, entry/exit, capping, or OpenShift pattern build.
 
 **Related**
-- Platform expansion backlog (no LocSync): [`../platform-analysis-parking-lot.md`](../platform-analysis-parking-lot.md)
+- Platform expansion backlog (no LocSync): [`../ops/platform-analysis-parking-lot.md`](../ops/platform-analysis-parking-lot.md)
 - Personalization tokens (DNT through MT): [`aep-email-personalization-fields.md`](aep-email-personalization-fields.md)
 - Focus Areas still lists **Multilingual → Q1 discovery** as a DA feature horizon; this file holds the LocSync depth
 

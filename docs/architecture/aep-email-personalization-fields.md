@@ -2,15 +2,15 @@
 
 **Status:** Living inventory / sketch — **exact XDM paths must be confirmed in AEP** (Schema Registry + Personalization editor). Do not invent paths from CJA names.  
 **Purpose:** One binder place for what profile (and related) fields are available — or needed — when personalizing AJO B2C emails.  
-**Related:** [PA-05 personalization](../platform-analysis-parking-lot.md) · [Q1 onboarding sketch](../ops/ajo-permissions-user-onboarding-q1-sketch.md) · [Decisioning attrs](decisioning-items-offers-requirements.md) (catalog ≠ profile) · handbook event/profile contract notes  
+**Related:** [PA-05 personalization](../ops/platform-analysis-parking-lot.md) · [Q1 onboarding sketch](../ops/ajo-permissions-user-onboarding-q1-sketch.md) · [Decisioning attrs](decisioning-items-offers-requirements.md) (catalog ≠ profile) · handbook event/profile contract notes  
 
 **Sandbox / env:** _TBD — prod vs non-prod_  
 **Last reviewed:** 2026-11-11 — Marketable verified in editor; **Marketo→AEP mapping v2** set as canonical reference  
 
 **Sources**
-- Editor path tree: `aep-profile-b2b-redhat-marketable-path.png` (local binder `AJO B2C Pilot/sources/` — not in this public repo)
-- **Canonical mapping (v2):** `redhat-aep-data-mapping-b2b-marketo-persons-v2.pdf` (local binder `AJO B2C Pilot/sources/` — not in this public repo) (+ `-v2-extract.txt`) — schema **B2B Person**, dataflow `b2b_marketo_persons`, tenant **redhat**
-- Older copy (v1, superseded for binder use): `redhat-aep-data-mapping-b2b-marketo-persons.pdf` (local binder `AJO B2C Pilot/sources/` — not in this public repo) — same core `b2b._redhat.*` set; **missing** preference-center + LeanData/SFDC rows that v2 adds
+- Editor path tree: `../sources/aep-profile-b2b-redhat-marketable-path.png`
+- **Canonical mapping (v2):** `../sources/redhat-aep-data-mapping-b2b-marketo-persons-v2.pdf` (+ `-v2-extract.txt`) — schema **B2B Person**, dataflow `b2b_marketo_persons`, tenant **redhat**
+- Older copy (v1, superseded for binder use): `../sources/redhat-aep-data-mapping-b2b-marketo-persons.pdf` — same core `b2b._redhat.*` set; **missing** preference-center + LeanData/SFDC rows that v2 adds
 
 **v1 vs v2 (quick)**
 | | v1 | v2 |
@@ -43,7 +43,7 @@ Adobe overview: [Get started with personalization](https://experienceleague.adob
 
 1. In AJO Email Designer → Personalization editor → browse **Profile attributes** (and export/screenshot if useful).  
 2. Or AEP → Schemas → **XDM Individual Profile** (and RH custom field groups) → copy field paths.  
-3. Drop schema export / screenshots into `(local binder evidence: AJO B2C Pilot/sources/` and update the tables below (`Status` = `verified`).  
+3. Drop schema export / screenshots into `../sources/` and update the tables below (`Status` = `verified`).  
 4. Note **sandbox** and **date** in the header.
 
 Suggested drop name: `sources/aep-individual-profile-field-export-YYYY-MM-DD.*`

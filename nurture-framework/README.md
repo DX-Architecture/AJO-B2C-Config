@@ -30,7 +30,7 @@ How the **CY26 Omnichannel Nurture Framework** (stages, Experience Patterns, Net
 - [`../docs/AJO-B2C-Team-Guide.md`](../docs/AJO-B2C-Team-Guide.md) — how we author in AJO B2C
 - [`../docs/architecture/journey-build-requirements.md`](../docs/architecture/journey-build-requirements.md) — promo vs transactional settings
 - [`../docs/architecture/decisioning-items-offers-requirements.md`](../docs/architecture/decisioning-items-offers-requirements.md) — Decisioning + framework elevation depth
-- [`../docs/platform-analysis-parking-lot.md`](../docs/platform-analysis-parking-lot.md) — PA-03 Jump, PA-04 entry model, PA-08 exit criteria
+- [`../docs/ops/platform-analysis-parking-lot.md`](../docs/ops/platform-analysis-parking-lot.md) — PA-03 Jump, PA-04 entry model, PA-08 exit criteria
 
 ## Local binder (not in this public repo)
 

@@ -25,7 +25,7 @@ Google Doc paste later is fine; **working SoT for this guide is this markdown fi
 
 | Track | Job | Start here |
 |---|---|---|
-| **1. Platform expansion** | Features / Focus Areas bets after pilot signal | [`platform-analysis-parking-lot.md`](platform-analysis-parking-lot.md) |
+| **1. Platform expansion** | Features / Focus Areas bets after pilot signal | [`ops/platform-analysis-parking-lot.md`](ops/platform-analysis-parking-lot.md) |
 | **2. Journey build** | Audience type → entry → panel settings | [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) |
 
 Full map: [`TRACKS.md`](TRACKS.md).
@@ -186,7 +186,7 @@ Destination tag values in play: Marketo · Target · AJO-B2C · AJO-B2B · CJA.
 
 1. Use the Focus Areas **Why / What / How / Dependencies / DA Lead** template (workflow project / Focus Areas deck).  
 2. If it’s a **build** pattern (entry, namespace, caps) → harden in track 2 (`journey-build-requirements` + handbook).  
-3. If it’s a **platform feature bet** → park in [`platform-analysis-parking-lot.md`](platform-analysis-parking-lot.md).  
+3. If it’s a **platform feature bet** → park in [`ops/platform-analysis-parking-lot.md`](ops/platform-analysis-parking-lot.md).  
 4. Do not grow one-off journey folklore only in chat or slides.
 
 ---

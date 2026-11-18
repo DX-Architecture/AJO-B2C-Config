@@ -1,19 +1,19 @@
 # AJO B2C — Platform analysis parking lot
 
-**Track:** 1 — Platform expansion · index [`TRACKS.md`](TRACKS.md)
+**Track:** 1 — Platform expansion · index [`../TRACKS.md`](../TRACKS.md)
 
 **Purpose:** Capture ideas to explore, do, or include in a deeper AJO B2C platform analysis **after the RHEL trial pilot has more runtime**. Not a full analysis yet — a structured backlog so thoughts don’t get lost.
 
 **Trigger to graduate this into a full analysis:** enough post-launch signal from CJA pulse checks + hypercare to separate “pilot gaps” from “platform expansion bets.” Until then, park ideas here and map them to DA Focus Areas.
 
 **Related**
-- Two-track home: [`TRACKS.md`](TRACKS.md)
-- Journey **build** settings (promo vs transactional) — track 2, not here: [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md)
-- Focus Areas source (current): `Digital Architecture - AJO B2C_Focus Areas.pdf` · extract `sources/ajo-b2c-focus-areas-extract.txt` (refreshed 2026-11-11 from Downloads)
-- Pilot brief / what’s next: [`project-brief.md`](project-brief.md)
-- Decisioning deep dive (side track): [`architecture/decisioning-items-offers-requirements.md`](architecture/decisioning-items-offers-requirements.md)
-- LocSync / Multilingual (side track): [`architecture/locsync-ajo-multilingual.md`](architecture/locsync-ajo-multilingual.md)
-- Q4 team track: `../Professional/q4-focus-areas.md` → AJO B2C platform track
+- Two-track home: [`../TRACKS.md`](../TRACKS.md)
+- Journey **build** settings (promo vs transactional) — track 2, not here: [`architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md)
+- Focus Areas source (current): `Digital Architecture - AJO B2C_Focus Areas.pdf` · extract `../sources/ajo-b2c-focus-areas-extract.txt` (refreshed 2026-11-11 from Downloads)
+- Pilot brief / what’s next: [`project-brief.md`](../project-brief.md)
+- Decisioning deep dive (side track): [`architecture/decisioning-items-offers-requirements.md`](../architecture/decisioning-items-offers-requirements.md)
+- LocSync / Multilingual (side track): [`architecture/locsync-ajo-multilingual.md`](../architecture/locsync-ajo-multilingual.md)
+- Q4 team track: `../../Professional/q4-focus-areas.md` → AJO B2C platform track
 
 ---
 
@@ -36,15 +36,15 @@
 | PA-03 | Jump action — cleaned against dual-activity + nurture framework | Activities / orchestration · Conflict mgmt (concurrency) | `explore` | Jump = fork (active in A+B), not a clean handoff — redesign use cases vs one-experience-per-product-line | [Adobe: Jump](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/jump) |
 | PA-04 | Journey entry model for scheduled email nurture (vs Jump) | Activities / events · Orchestration patterns | `explore` | Classic nurture = marketable + day/time + AEP membership → Read Audience; that path cannot use Jump — need a split model for relevance + lifecycle | See card; [Journey types](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/journey-types-selection) |
 | PA-05 | AJO personalization (editor, profile data, playground, inline edit) | Content management · Dynamic content | `idea` | Bookmark for next build — profile tokens, Handlebars, playground practice before OpenShift SKU content | [Get started with personalization](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/content-management/personalization/personalize) |
-| PA-06 | OpenShift Pre-purchase new build (CY27 SKUs / TM ideas) | Content mgmt · Decisioning · Experience Patterns | `idea` | New SKU map + modular email sections + Discover→Learn→Expand pre-purchase; personalization + decisioning opportunity | Source: `sources/tm-ideas-new-openshift-skus.pdf` |
-| PA-08 | Journey **Exit criteria** (Event / Audience / Profile attribute) | Activities / orchestration · Experience Pattern “release” | `recommend` | **Also a track-2 build requirement** — stop nurture when purpose is met; pairs with PA-03/04 | Build: [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) §4 · [Adobe Exit criteria](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/create-journey/journey-properties) |
-| OPS-01 | Q1 permissions + user onboarding + best-practices pack | Tool process / docs / enablement | `idea` | Who gets AJO access for Q1 UCs; co-authored BPs (marketable, entry, namespace, unitary events, support) | [`ops/ajo-permissions-user-onboarding-q1-sketch.md`](ops/ajo-permissions-user-onboarding-q1-sketch.md) |
-| OPS-02 | AEP schemas / fields for email personalization inventory | Content / data · Personalization | `idea` | Living list of verified `{{profile…}}` paths + known needs (marketable, persona, product…) | [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md) |
-| OPS-03 | Tag structure AEP/CDP/AJO B2C | Tool process / governance | `idea` | CDP audience naming vs AJO Unified Tag categories (milestone names, filterable metadata) | [`ops/aep-cdp-ajo-b2c-tag-structure-sketch.md`](ops/aep-cdp-ajo-b2c-tag-structure-sketch.md) |
+| PA-06 | OpenShift Pre-purchase new build (CY27 SKUs / TM ideas) | Content mgmt · Decisioning · Experience Patterns | `idea` | New SKU map + modular email sections + Discover→Learn→Expand pre-purchase; personalization + decisioning opportunity | Source: `../sources/tm-ideas-new-openshift-skus.pdf` |
+| PA-08 | Journey **Exit criteria** (Event / Audience / Profile attribute) | Activities / orchestration · Experience Pattern “release” | `recommend` | **Also a track-2 build requirement** — stop nurture when purpose is met; pairs with PA-03/04 | Build: [`architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md) §4 · [Adobe Exit criteria](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/create-journey/journey-properties) |
+| OPS-01 | Q1 permissions + user onboarding + best-practices pack | Tool process / docs / enablement | `idea` | Who gets AJO access for Q1 UCs; co-authored BPs (marketable, entry, namespace, unitary events, support) | [`ops/ajo-permissions-user-onboarding-q1-sketch.md`](ajo-permissions-user-onboarding-q1-sketch.md) |
+| OPS-02 | AEP schemas / fields for email personalization inventory | Content / data · Personalization | `idea` | Living list of verified `{{profile…}}` paths + known needs (marketable, persona, product…) | [`architecture/aep-email-personalization-fields.md`](../architecture/aep-email-personalization-fields.md) |
+| OPS-03 | Tag structure AEP/CDP/AJO B2C | Tool process / governance | `idea` | CDP audience naming vs AJO Unified Tag categories (milestone names, filterable metadata) | [`ops/aep-cdp-ajo-b2c-tag-structure-sketch.md`](aep-cdp-ajo-b2c-tag-structure-sketch.md) |
 
-*PA-07 retired — LocSync / Multilingual is a **side track**: [`architecture/locsync-ajo-multilingual.md`](architecture/locsync-ajo-multilingual.md). Keep IDs stable (`PA-nn` / `OPS-nn`).*
+*PA-07 retired — LocSync / Multilingual is a **side track**: [`architecture/locsync-ajo-multilingual.md`](../architecture/locsync-ajo-multilingual.md). Keep IDs stable (`PA-nn` / `OPS-nn`).*
 
-*Journey **build** checklists (promo vs transactional settings) live in track 2: [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) — not this parking lot.*
+*Journey **build** checklists (promo vs transactional settings) live in track 2: [`architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md) — not this parking lot.*
 
 ---
 
@@ -172,7 +172,7 @@ Journey A (origin)                         Journey B (target)
 | **Catapult (velocity)** | Accelerate on intent | Prefer **Decisioning / path conditions inside one journey**, or exit + unitary into a fast-path journey | Jump to a catapult journey **while** origin cadence continues = worst dual-messaging case. If Jump, terminate A immediately. |
 | **Experience Pattern criteria** | Objective / catch / release / content mix | Jump does **not** replace catch/release | Catch = B’s entry event (or A’s before Jump). Release on A should be the Jump gate. Content mix = Decisioning inside A or B — not Jump. |
 | **One product line / one experience** | Hard RH rule | Dual-active A+B is a **controlled exception window** | Keep the overlap window tiny (Jump→End) or forbid Jump for that edge. |
-| **Decisioning** | Offer/content inside a pattern | Complement | Jump = which journey shell; Decisioning = which offer inside the active shell ([decisioning note §7](architecture/decisioning-items-offers-requirements.md)) |
+| **Decisioning** | Offer/content inside a pattern | Complement | Jump = which journey shell; Decisioning = which offer inside the active shell ([decisioning note §7](../architecture/decisioning-items-offers-requirements.md)) |
 
 #### Use cases — keep / reshape / drop
 
@@ -306,7 +306,7 @@ Prefer:
 
 | Need | Choose |
 |---|---|
-| Marketable list, fixed day/time, AEP membership snapshot | **Read Audience** + schedule type **Daily** + **incremental read** (see [`architecture/promotional-read-audience-settings.md`](architecture/promotional-read-audience-settings.md); handbook §2.5.2 — RHEL Learn Deep reference) |
+| Marketable list, fixed day/time, AEP membership snapshot | **Read Audience** + schedule type **Daily** + **incremental read** (see [`architecture/promotional-read-audience-settings.md`](../architecture/promotional-read-audience-settings.md); handbook §2.5.2 — RHEL Learn Deep reference) |
 | Most relevant product/topic at send | **Decisioning / conditions inside** that journey — not Jump |
 | Handoff to Trial Start / shared survey / next pattern phase with Jump | **Unitary-event** (or sandbox-confirmed AQ→event Jump) journeys |
 | Enter the moment they qualify (evergreen), not on a clock | **Audience Qualification** on a **streaming** audience; then Wait to quiet hours / weekday if needed |
@@ -350,7 +350,7 @@ Prefer:
 
 **Explore later**
 - [ ] Walk playground before OpenShift email1 build
-- [ ] List profile attrs required for OpenShift pre-purchase (persona, product+version, OpenShift intent, digital footprint) → fill [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md)
+- [ ] List profile attrs required for OpenShift pre-purchase (persona, product+version, OpenShift intent, digital footprint) → fill [`architecture/aep-email-personalization-fields.md`](../architecture/aep-email-personalization-fields.md)
 - [ ] Decide what is personalization token vs decisioning content block in the 4-section template
 - [ ] Verify XDM paths in AEP / Personalization editor (do not invent from CJA)
 
@@ -358,7 +358,7 @@ Prefer:
 
 ### PA-06 — New build opportunity: OpenShift Pre-purchase (TM ideas / CY27 SKUs)
 
-**Source (in binder):** [`sources/tm-ideas-new-openshift-skus.pdf`](sources/tm-ideas-new-openshift-skus.pdf) (+ preview/OCR under `sources/`)  
+**Source (in binder):** [`../sources/tm-ideas-new-openshift-skus.pdf`](../sources/tm-ideas-new-openshift-skus.pdf) (+ preview/OCR under `../sources/`)  
 **Origin:** `/Users/gdanish/Downloads/TM ideas for new OpenShift SKUs.pdf`
 
 **What the board is saying (extracted)**
@@ -403,7 +403,7 @@ Prefer:
 
 ### PA-08 — Journey Exit criteria (Event / Audience / Profile attribute)
 
-**Status:** `recommend` — author contract lives in track 2 [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) **§4**. This card keeps expansion / pattern examples.
+**Status:** `recommend` — author contract lives in track 2 [`architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md) **§4**. This card keeps expansion / pattern examples.
 
 **Why:** Direct OOTB match to Experience Pattern **release** (conversion / “stop messaging when purpose is met”). Complements entry model (**PA-04**) and avoids over-relying on Jump (**PA-03**) for handoffs.
 
@@ -457,7 +457,7 @@ Source: updated `Digital Architecture - AJO B2C_Focus Areas.pdf`
 |---|---|
 | Decisioning + Partner newsletter | Focus Areas Q4/Q1 + architecture note |
 | Dynamic content / OCP SKUs | Focus Areas Q4 Ideation + **PA-06** |
-| Multilingual discovery | Focus Areas CY27Q1 · **separate track** [`architecture/locsync-ajo-multilingual.md`](architecture/locsync-ajo-multilingual.md) |
+| Multilingual discovery | Focus Areas CY27Q1 · **separate track** [`architecture/locsync-ajo-multilingual.md`](../architecture/locsync-ajo-multilingual.md) |
 | Priority / ranking formulas | Focus Areas CY27Q1 discovery |
 | Path experiments / Optimize / conditions | Focus Areas CY27Q2–Q4 |
 | Jump, entry model, quiet hours, weekday waits | PA-01…04 |
@@ -481,7 +481,7 @@ Source: updated `Digital Architecture - AJO B2C_Focus Areas.pdf`
 3. **Inside-journey intelligence:** Reaction + conditional/dynamic (not Jump-first)  
 4. **CY27Q1 discovery (platform):** ranking formulas  
 5. **Defer:** Jump sprawl, extra channels until a named UC needs them  
-6. **Separate track (not this backlog):** Multilingual / LocSync — [`architecture/locsync-ajo-multilingual.md`](architecture/locsync-ajo-multilingual.md)
+6. **Separate track (not this backlog):** Multilingual / LocSync — [`architecture/locsync-ajo-multilingual.md`](../architecture/locsync-ajo-multilingual.md)
 
 ---
 
@@ -519,4 +519,4 @@ Explore checklist:
 ---
 
 **Created:** 2026-11-11  
-**Last updated:** 2026-11-18 — Two-track split: this file = platform expansion only; journey build → `architecture/journey-build-requirements.md` · `TRACKS.md`
+**Last updated:** 2026-11-18 — Two-track split: this file = platform expansion only; journey build → `../architecture/journey-build-requirements.md` · `../TRACKS.md`

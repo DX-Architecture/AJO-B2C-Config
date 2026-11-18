@@ -161,7 +161,7 @@ Pilot uses a fraction of AJO B2C. WF objective: create space for DA to learn, re
 - **Decision Capabilities** — custom catalog attributes · decision items · decision rules (**IT Discover**, kickoff 10/20; use case identified)
 - **Dynamic content** — conditional rules in personalization + Email Designer variants (**Ideation**; use case **OCP / OpenShift new SKUs**)
 
-Idea backlog (post-pilot platform analysis): [`platform-analysis-parking-lot.md`](platform-analysis-parking-lot.md) — PA-01…08 (OpenShift pre-purchase, exit criteria, Jump/entry, etc.; **PA-07 unused**).
+Idea backlog (post-pilot platform analysis): [`ops/platform-analysis-parking-lot.md`](ops/platform-analysis-parking-lot.md) — PA-01…08 (OpenShift pre-purchase, exit criteria, Jump/entry, etc.; **PA-07 unused**).
 
 **Separate track (not platform expansion parking lot):** LocSync ↔ AJO Multilingual — [`architecture/locsync-ajo-multilingual.md`](architecture/locsync-ajo-multilingual.md).
 

@@ -77,7 +77,7 @@ ops/
 - Team guide §10 (IT / process): [`../AJO-B2C-Team-Guide.md`](../AJO-B2C-Team-Guide.md)
 - Journey build (entry / namespace examples): [`../architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md)
 - Pilot unitary event reference: [`../architecture/transactional-unitary-event-settings.md`](../architecture/transactional-unitary-event-settings.md)
-- Platform / feature backlog: [`../platform-analysis-parking-lot.md`](../platform-analysis-parking-lot.md) (esp. PA-04 entry, PA-08 exit, PA-03 namespace/Jump)
+- Platform / feature backlog: [`platform-analysis-parking-lot.md`](platform-analysis-parking-lot.md) (esp. PA-04 entry, PA-08 exit, PA-03 namespace/Jump)
 - Focus Areas: `../Digital Architecture - AJO B2C_Focus Areas.pdf`
 - Decisioning enablement (Partner / OpenShift authors will need catalog permissions): [`../architecture/decisioning-items-offers-requirements.md`](../architecture/decisioning-items-offers-requirements.md)
 

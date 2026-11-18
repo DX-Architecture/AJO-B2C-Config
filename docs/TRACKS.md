@@ -7,7 +7,7 @@ Use this when work feels scattered. Everything in the binder maps to **one** of 
 
 | Track | Job | Home | Not this track |
 |---|---|---|---|
-| **1. Platform expansion** | What to learn / recommend **after** pilot signal — features, Focus Areas bets, parking-lot ideas | [`platform-analysis-parking-lot.md`](platform-analysis-parking-lot.md) | Day-to-day journey build checklists |
+| **1. Platform expansion** | What to learn / recommend **after** pilot signal — features, Focus Areas bets, parking-lot ideas | [`ops/platform-analysis-parking-lot.md`](ops/platform-analysis-parking-lot.md) | Day-to-day journey build checklists |
 | **2. Journey build requirements** | How to **author** a journey: audience type → entry shape → panel settings for **promotional** vs **transactional** | [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) | Feature backlog / OpenShift ideation |
 
 **Side tracks (keep out of both until merged on purpose)**
