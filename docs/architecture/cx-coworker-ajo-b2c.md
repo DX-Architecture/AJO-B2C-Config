@@ -4,7 +4,7 @@
 **Role:** Practical Coworker runners for AJO B2C day-to-day work.  
 **Not this doc:** Full-stack Coworker chapter (Marketo / Workfront / AJO B2B) stays in the handbook draft; dense contracts stay in **Handbook Ch2 / Ch6**. When this file and the handbook disagree on a contract, **handbook wins**.
 
-**Related:** [`../AJO-B2C-Team-Guide.md`](../AJO-B2C-Team-Guide.md) · [`../TRACKS.md`](../TRACKS.md) · [`../architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md) · [`../RHEL-Trial-Experience.md`](../RHEL-Trial-Experience.md)
+**Related:** [`../AJO-B2C-Team-Guide.md`](../AJO-B2C-Team-Guide.md) · [`../TRACKS.md`](../TRACKS.md) · [`journey-build-requirements.md`](journey-build-requirements.md) · [`../RHEL-Trial-Experience.md`](../RHEL-Trial-Experience.md)
 
 **Last updated:** 2026-11-18
 
@@ -246,9 +246,9 @@ Trigger phrases:
 
 | Artifact | Role |
 |---|---|
-| This file (`docs/ops/cx-coworker-ajo-b2c.md`) | AJO B2C Coworker use cases, prompts, skill SoT in git |
+| This file (`docs/architecture/cx-coworker-ajo-b2c.md`) | AJO B2C Coworker use cases, prompts, skill SoT in git |
 | Handbook Ch2 / Ch6 | Contracts, failure modes, CJA paths |
-| [`../architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md) | Promo vs transactional author checklist |
+| [`journey-build-requirements.md`](journey-build-requirements.md) | Promo vs transactional author checklist |
 | [`../RHEL-Trial-Experience.md`](../RHEL-Trial-Experience.md) | Pilot narrative / scorecard |
 | Experience League — Coworker Chat use cases / create first skill | Vendor how-to |
 | Coworker → Customizations → Skills | Where `[DA]` skills live after publish |

@@ -18,7 +18,7 @@ Digital Architecture **AJO B2C** configuration, team enablement, and **binder re
 | [`docs/architecture/decisioning-quick-reference.md`](docs/architecture/decisioning-quick-reference.md) | Decisioning — where offer / copy / placement live |
 | [`docs/architecture/partner-newsletter-offer-catalog-working-sheet.md`](docs/architecture/partner-newsletter-offer-catalog-working-sheet.md) | Partner newsletter — Distro offer catalog → Decisioning |
 | [`docs/ops/platform-analysis-parking-lot.md`](docs/ops/platform-analysis-parking-lot.md) | Platform expansion backlog (PA-*) |
-| [`docs/ops/cx-coworker-ajo-b2c.md`](docs/ops/cx-coworker-ajo-b2c.md) | CX Coworker — AJO B2C use cases, prompts, custom skills |
+| [`docs/architecture/cx-coworker-ajo-b2c.md`](docs/architecture/cx-coworker-ajo-b2c.md) | CX Coworker — AJO B2C use cases, prompts, custom skills |
 | [`nurture-framework/`](nurture-framework/) | Omnichannel Nurture Framework × AJO B2C (Marketo vs AJO) |
 | [`sources/`](sources/) | Full pilot binder binaries + extracts |
 

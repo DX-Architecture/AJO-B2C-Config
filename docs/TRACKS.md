@@ -14,7 +14,7 @@ Use this when work feels scattered. Everything in the binder maps to **one** of 
 - LocSync / Multilingual → [`architecture/locsync-ajo-multilingual.md`](architecture/locsync-ajo-multilingual.md)
 - Decisioning → [`architecture/decisioning-quick-reference.md`](architecture/decisioning-quick-reference.md) (offer / copy / placement) · depth [`architecture/decisioning-items-offers-requirements.md`](architecture/decisioning-items-offers-requirements.md)
 - Pilot narrative / scorecard → [`RHEL-Trial-Experience.md`](RHEL-Trial-Experience.md)
-- CX Coworker (AJO B2C prompts / custom skills) → [`ops/cx-coworker-ajo-b2c.md`](ops/cx-coworker-ajo-b2c.md)
+- CX Coworker (AJO B2C prompts / custom skills) → [`architecture/cx-coworker-ajo-b2c.md`](architecture/cx-coworker-ajo-b2c.md)
 
 **Canvas (track 2 at a glance):** `ajo-b2c-journey-build-requirements.canvas.tsx` (open beside chat)
 
