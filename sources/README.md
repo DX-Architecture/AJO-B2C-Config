@@ -38,6 +38,13 @@ Also mirrored under [`../nurture-framework/sources/`](../nurture-framework/sourc
 | `ajo-unitary-event-fields-eye-icon.png` | Unitary field UI |
 | `ajo-permissions-user-onboarding-q1.pdf` (+ extract / PNG) | Q1 permissions / onboarding |
 
+## Decisioning / Partner newsletter
+
+| File | Use |
+|---|---|
+| `AJO_EXAMPLE_Distributor_Newsletter_Offer_Catalog.pdf` | Distro newsletter offer-catalog working sheet (AJO Offer Catalog columns) |
+| Markdown contract | [`../docs/architecture/partner-newsletter-offer-catalog-working-sheet.md`](../docs/architecture/partner-newsletter-offer-catalog-working-sheet.md) |
+
 ## Other platform tracks
 
 | File | Use |

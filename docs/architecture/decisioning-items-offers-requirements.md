@@ -253,19 +253,20 @@ Cross-check: steps 2–9 satisfy the minimum stack in §4.
 
 ### 5.2 Starter offer catalog — Partner Personalized Newsletter
 
-**Collections (examples):** `Partner Pulse EN`, `Distributors EN`, `TechDev EN` (filter on `newsletterProgram` + `language`)
+**Working sheet (Distributor section):** team intake spreadsheet → [`partner-newsletter-offer-catalog-working-sheet.md`](partner-newsletter-offer-catalog-working-sheet.md) (column→schema map + Distro example inventory). Prefer that inventory for Distro sandbox items.
+
+**Collections (examples):** `Distributors`, `Partner Pulse`, `TechDev` (filter on `newsletterProgram` / `partnerType`; language deferred in Distro initial pilot)
 
 | Item name | Priority | Eligibility | Custom attrs (sketch) | What it is |
 |---|---:|---|---|---|
-| `PP-EN-Module-Update-Q1` | 80 | Audience: Partner Pulse members | `newsletterProgram=partner-pulse`, `partnerModule=core`, `language=en`, headline/body, `ctaUrl` | Module news block for Partner Pulse |
-| `PP-EN-Channel-Spotlight` | 60 | Rule: `channel equals reseller` | same + `channel=reseller` | Channel-specific spotlight when Pulse alone isn't enough |
-| `DIST-EN-Margin-Program` | 90 | Audience: Distributors | `newsletterProgram=distributors`, `language=en` | Highest-priority Distro offer |
-| `DIST-EN-Training-Path` | 50 | Audience: Distributors | same | Secondary Distro content |
-| `TD-EN-API-Release` | 85 | Audience: TechDev | `newsletterProgram=techdev`, `language=en` | TechDev product/API drop |
-| `TD-EN-Sandbox-Invite` | 70 | Rule: TechDev + recent login | same | Hands-on invite for engaged TechDev partners |
+| `DIST-Aligned-Distribution-2027` | 100 | Audience: Distributors | `newsletterProgram=distributors`, `partnerType=Distributor`, Partner Program Updates | Time-bound Aligned Distribution (Required) |
+| `DIST-RHEL-Security-Initiative-4pct` | 70 | Audience: Distributors | RHEL Sales + Marketing Enablement | High — security / pipeline initiative |
+| `DIST-Red-Hat-AI-3-5` | 70 | Audience: Distributors | AI Sales + Marketing Enablement | High — AI 3.5 enablement |
+| `DIST-Cisco-Ansible-Playbook` | 40 | Audience: Distributors | Ansible Sales Enablement | Medium — Cisco / Ansible playbook |
+| `DIST-Partner-Demand-Center-YE` | 20 | Audience: Distributors | Marketing Enablement | Low — evergreen Demand Center CTA |
 | `FALLBACK-Generic-Partner` | — | *(fallback only)* | Generic partner thank-you / homepage CTA | Used when nothing else qualifies |
 
-**Why these:** covers multi-program overlap (Pulse vs Distro vs TechDev), priority ranking, and a real fallback — the three things the Newsletter use case is meant to prove. Schema attrs: see §6.3.
+**Why these:** real Distro sheet rows (priority bands Required/High/Medium/Low), module tags, and a fallback — enough to prove schema + ranking before Pulse/TechDev sheets. Full column map: working-sheet doc.
 
 ### 5.3 Starter offer catalog — Event Modernization
 
@@ -337,16 +338,18 @@ Mapping the newsletter "why" onto the `_YourOrg` custom-attribute model above �
 | Attribute | Type | Purpose |
 |---|---|---|
 | `newsletterProgram` | String | `partner-pulse` / `distributors` / `techdev` — which newsletter this item belongs to |
-| `partnerModule` | String | Partner program module, drives collection grouping |
-| `channel` | String | Partner channel segment |
-| `language` | String | Localization key |
-| `region` | String *(future)* | Named as a likely add'l requirement |
-| `product` | String *(future)* | Named as a likely add'l requirement |
-| `headline` / `body` | Decisioning Content | Personalized copy per recipient |
-| `imageUrl` | Decisioning Asset | Partner-asset image |
+| `partnerType` | String | e.g. `Distributor` (from Distro working sheet) |
+| `partnerModule` | String | Enablement module (Partner Enablement, Marketing Enablement, …) |
+| `region` | String | e.g. `Global` — sheet column in Distro inventory |
+| `language` | String | Localization key — **deferred** in Distro initial pilot per working sheet |
+| `headline` / `title` | Decisioning Content or String | Offer title |
+| `body` | Decisioning Content | Offer description |
+| `ctaLabel` | String / Decisioning Content | Offer CTA text |
 | `ctaUrl` | String | Landing page |
+| `persona` | String *(optional later)* | Sheet column; blank in Distro example |
+| Admin Only | — | **Do not add in v1** — sheet notes not queryable in AJO (Workbench / RHSC only) |
 
-**Eligibility sketch:** Audience = confirmed partner-program membership (stable). Rule = `partnerModule`/`channel`/`language` match at send time (handles a partner who qualifies for more than one newsletter — rule evaluates current context, not a stale audience snapshot).
+**Eligibility sketch:** Audience = confirmed partner-program membership (stable). Rule = `partnerModule`/`region` match at send time when needed. Language out of Distro v1. Full sheet→schema map: [`partner-newsletter-offer-catalog-working-sheet.md`](partner-newsletter-offer-catalog-working-sheet.md).
 
 **Capping sketch:** cap per `newsletterProgram` so a partner eligible for two newsletters in the same cycle doesn't get duplicate near-identical content — needs a decision on whether that's capping (same item) or collection/strategy design (different items, same partner) since capping is per-item, not cross-program by default.
 

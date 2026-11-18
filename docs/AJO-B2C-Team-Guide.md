@@ -167,6 +167,7 @@ Until those BP pages exist, use this guide + handbook Ch2 + the two reference co
 | Q1 permissions / IT & process sketch | [`ops/ajo-permissions-user-onboarding-q1-sketch.md`](ops/ajo-permissions-user-onboarding-q1-sketch.md) |
 | **Decisioning — where offer / copy / placement live** | [`architecture/decisioning-quick-reference.md`](architecture/decisioning-quick-reference.md) |
 | Decisioning — full requirements (items, setup, placements, use cases) | [`architecture/decisioning-items-offers-requirements.md`](architecture/decisioning-items-offers-requirements.md) |
+| Partner newsletter — Distro offer catalog working sheet | [`architecture/partner-newsletter-offer-catalog-working-sheet.md`](architecture/partner-newsletter-offer-catalog-working-sheet.md) |
 
 Destination tag values in play: Marketo · Target · AJO-B2C · AJO-B2B · CJA.
 
@@ -202,4 +203,4 @@ Destination tag values in play: Marketo · Target · AJO-B2C · AJO-B2B · CJA.
 ---
 
 **Created:** 2026-11-18  
-**Last updated:** 2026-11-18 — §11 Decisioning quick reference + full requirements as Team Guide resources
+**Last updated:** 2026-11-18 — §11 Partner newsletter Distro offer-catalog working sheet

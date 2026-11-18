@@ -15,6 +15,8 @@ Digital Architecture **AJO B2C** configuration, team enablement, and **binder re
 | [`docs/AJO-B2C-Team-Guide.md`](docs/AJO-B2C-Team-Guide.md) | Enablement — how we build in AJO B2C |
 | [`docs/TRACKS.md`](docs/TRACKS.md) | Two tracks: platform expansion vs journey build |
 | [`docs/architecture/journey-build-requirements.md`](docs/architecture/journey-build-requirements.md) | Promo vs transactional audience / journey settings |
+| [`docs/architecture/decisioning-quick-reference.md`](docs/architecture/decisioning-quick-reference.md) | Decisioning — where offer / copy / placement live |
+| [`docs/architecture/partner-newsletter-offer-catalog-working-sheet.md`](docs/architecture/partner-newsletter-offer-catalog-working-sheet.md) | Partner newsletter — Distro offer catalog → Decisioning |
 | [`docs/ops/platform-analysis-parking-lot.md`](docs/ops/platform-analysis-parking-lot.md) | Platform expansion backlog (PA-*) |
 | [`nurture-framework/`](nurture-framework/) | Omnichannel Nurture Framework × AJO B2C (Marketo vs AJO) |
 | [`sources/`](sources/) | Full pilot binder binaries + extracts |

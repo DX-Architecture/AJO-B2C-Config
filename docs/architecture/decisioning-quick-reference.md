@@ -76,7 +76,7 @@ Practical setup order + starter offer examples: full doc **§5**.
 
 | Use case | Job |
 |---|---|
-| **Partner Personalized Newsletter** | One catalog; prioritize content when a partner qualifies for Pulse / Distro / TechDev |
+| **Partner Personalized Newsletter** | One catalog; prioritize content when a partner qualifies for Pulse / Distro / TechDev — Distro intake sheet → [`partner-newsletter-offer-catalog-working-sheet.md`](partner-newsletter-offer-catalog-working-sheet.md) |
 | **Event Modernization** | One nurture shell; offer slot follows which event they attended (gated by Q4 event catalog / tier data) |
 
 ---
