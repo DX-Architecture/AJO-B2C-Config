@@ -1,0 +1,38 @@
+--- PAGE 1 ---
+AJO User Permissions and Onboarding 
+1.​
+Review AJO B2C & B2B User Permissions to ensure they support the use cases needed 
+2.​ Identify which users need to be in the platform ahead of Q1 
+a.​ AJO B2C 
+i.​
+Lizzy Ackerman 
+ii.​
+ 
+Taliyah McBride
+iii.​
+Tannesia  
+iv.​
+ 
+Amanda Morelli
+b.​ AJO B2B 
+i.​
+ 
+3.​ What materials do they need to get started? (ie, best practices, examples of how to set 
+up a journey) 
+a.​ Proof of cohort participation 
+b.​ Initial Best Practices (Co-Author) 
+i.​
+Marketable 
+ii.​
+Bouncebacks 
+iii.​
+Journey entry guidance 
+iv.​
+Namespace guidance 
+v.​
+Audience Selection [Amanda Machado] 
+vi.​
+Where/How to request unitary event (including template) 
+vii.​
+How to request support 
+c.​ Troubleshooting Documentation for MarTech 

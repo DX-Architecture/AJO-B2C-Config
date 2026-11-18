@@ -1,0 +1,596 @@
+--- PAGE 1 ---
+None‎
+LocSync Translation Backend Integration Guide 
+Date: 2026-06-01​
+Audience: Product, engineering, and Adobe Express partnership discussions 
+ 
+At a Glance 
+Question 
+Answer 
+What is it? 
+A FastAPI HTTP service (locsync-translation/) that translates 
+numbered text chunks using Google AutoML and/or Google Gemini, with 
+post-editor (PE) style rules from Google Sheets. 
+How do 
+clients use 
+it? 
+Submit a job → receive a job_id → poll status → read translations 
+when status is completed. 
+How does 
+Adobe 
+Express call 
+it? 
+An Express Add-on UI iframe calls the API via fetch(); results are 
+passed to the Document Sandbox to write text back to the canvas. 
+What must 
+change for 
+Express? 
+CORS (not configured today), network reachability (currently internal 
+OpenShift), and token distribution to add-on users. 
+ 
+1. What the Backend Does 
+Translation is a multi-step pipeline, not a single instant lookup. 
+flowchart LR 
+    A[Client sends chunks + languages] --> B[API validates & queues 
+job] 
+
+--- PAGE 2 ---
+None‎
+    B --> C[Background thread runs pipeline] 
+    C --> D{Engine & content type} 
+    D -->|Standard| E[Google MT and/or Gemini PE] 
+    D -->|SRT| F[Two-phase subtitle workflow] 
+    E --> G[translations map] 
+    F --> G 
+    G --> H[Client polls until completed] 
+Core ideas: 
+1.​ Chunks, not blobs — Text arrives as a dictionary of { "id": "text" }. IDs let the caller 
+map results back to UI elements or subtitle cues. 
+2.​ Async by design — Gemini and AutoML calls can take seconds. The API returns 
+immediately with a job_id so callers never block on model latency. 
+3.​ Quality layers — Raw machine translation can be refined by Gemini using 
+language-specific rules loaded from Google Sheets (PE rules, personas, DNT lists). 
+4.​ Content-type routing — The same API endpoint behaves differently when content_type 
+is "Video subtitle (SRT)" vs. generic text. 
+ 
+2. System Architecture 
+flowchart TB 
+    subgraph Clients 
+        ST[LocSync Streamlit UI] 
+        AE[Adobe Express Add-on UI iframe] 
+    end 
+ 
+    subgraph OpenShift["OpenShift (internal)"] 
+        API["FastAPI :8000<br/>locsync-translation/api.py"] 
+        JOBS[(In-memory job store)] 
+    end 
+ 
+    subgraph External 
+        GS[Google Sheets<br/>PE rules, DNT, personas] 
+
+--- PAGE 3 ---
+        GML[Google AutoML MT] 
+        GEM[Google Gemini] 
+    end 
+ 
+    ST -->|POST /translate_chunks_start<br/>GET 
+/translate_chunks_status| API 
+    AE -.->|Requires CORS + public route| API 
+    API --> JOBS 
+    API --> GS 
+    API --> GML 
+    API --> GEM 
+ 
+Component 
+Role 
+FastAPI app 
+HTTP layer, auth, job lifecycle, Pydantic validation 
+Background 
+thread 
+Runs translate_chunks_background() per job 
+TranslationJob 
+In-memory state: progress, phase, results, errors 
+Google Sheets 
+Source of truth for PE rules, universal rules, SRT rules, DNT 
+prompts 
+Google AutoML 
+Custom-trained MT models per language pair (google / 
+google+style) 
+Gemini 
+Direct translation or post-editing (gemini / gemini+style) 
+Deployment notes: 
+●​
+Served with Uvicorn on port 8000 inside a UBI9 Python 3.11 container. 
+●​
+LocSync Streamlit reaches the API via internal service URL (MT_API_URL), not the public 
+Route — see docs/quick-deployment-guide.md. 
+●​
+CORS is not configured in the backend today; browser-based add-ons cannot call the API 
+until this is added. 
+ 
+
+--- PAGE 4 ---
+None‎
+None‎
+3. API Contract (What Adobe Express 
+Needs) 
+3.1 Authentication 
+Every protected endpoint requires a pre-shared token: 
+X-Api-Token: <your-token> 
+The server validates the token using SHA-256 hashing + constant-time comparison 
+(hmac.compare_digest). The raw secret is stored only in the MT_API_KEY environment variable 
+— never logged or returned. 
+HTTP status 
+Meaning 
+401 
+Missing or invalid X-Api-Token 
+429 
+Server busy (too many active jobs) 
+404 
+Job ID not found (on status poll) 
+3.2 Primary Endpoints for Translation 
+sequenceDiagram 
+    participant AddOn as Adobe Express Add-on (UI iframe) 
+    participant API as LocSync MT API 
+    participant Worker as Background thread 
+ 
+    AddOn->>API: POST /translate_chunks_start<br/>{chunks, 
+source_lang, target_lang, ...} 
+    API->>Worker: Start translate_chunks_background() 
+    API-->>AddOn: { job_id, status: "started", total_chunks } 
+
+--- PAGE 5 ---
+None‎
+None‎
+ 
+    loop Poll every 1–3 s 
+        AddOn->>API: GET /translate_chunks_status/{job_id} 
+        API-->>AddOn: { status: "in_progress", processed_chunks, 
+current_phase } 
+    end 
+ 
+    Worker-->>API: Job complete 
+    AddOn->>API: GET /translate_chunks_status/{job_id} 
+    API-->>AddOn: { status: "completed", translations: {...} } 
+POST /translate_chunks_start 
+Starts an async translation job. 
+Minimal request (subtitle text overlays): 
+{ 
+  "source_lang": "en", 
+  "target_lang": "fr", 
+  "chunks": { 
+    "1": "Welcome to Adobe Express.", 
+    "2": "Add subtitles to your video." 
+  }, 
+  "method": "gemini+style", 
+  "content_type": "Video subtitle (SRT)" 
+} 
+Immediate response: 
+{ 
+  "job_id": "a1b2c3d4-...", 
+  "status": "started", 
+  "total_chunks": 2 
+} 
+
+--- PAGE 6 ---
+None‎
+None‎
+GET /translate_chunks_status/{job_id} 
+Poll until status is "completed" or "error". 
+In progress: 
+{ 
+  "status": "in_progress", 
+  "total_chunks": 2, 
+  "processed_chunks": 1, 
+  "current_phase": "gemini_translation", 
+  "phase_details": "Gemini processing… 60%" 
+} 
+Completed: 
+{ 
+  "status": "completed", 
+  "translations": { 
+    "1": "Bienvenue dans Adobe Express.", 
+    "2": "Ajoutez des sous-titres à votre vidéo." 
+  }, 
+  "machine_translations": { "...": "..." }, 
+  "changes": [], 
+  "total_chunks": 2, 
+  "processed_chunks": 2 
+} 
+Important: When a job reaches completed or error, the server deletes the job from memory 
+on the next status poll. Callers must capture results on the first completed response. 
+3.3 Key Request Fields 
+Field 
+Required 
+Purpose 
+source_lang 
+Yes 
+Source language code (e.g. en, fr, zh-cn) 
+
+--- PAGE 7 ---
+target_lang 
+Yes 
+Target language code (e.g. fr, de, zh-tw) 
+chunks 
+Yes 
+{ "id": "text" } — max 2000 chunks, 
+5000 chars each 
+method 
+No (default 
+google) 
+google, google+style, gemini, 
+gemini+style 
+content_type 
+No 
+Set "Video subtitle (SRT)" for 
+subtitle-specific pipeline 
+enable_dnt 
+No 
+Inject Do-Not-Translate rules from Sheets 
+gemini_model 
+No 
+Override model (allowlisted: e.g. 
+gemini-3.5-flash) 
+thinking_level 
+No 
+minimal / low / medium / high (Gemini 3.x) 
+additional_instruct
+ions 
+No 
+Free-text instructions appended to prompt 
+Metadata keys starting with _ (e.g. _srt_source) are passthrough only — not counted toward 
+chunk limits. 
+3.4 Translation Methods Explained 
+Method 
+Phase 1 
+Phase 2 (if +style) 
+google 
+Google AutoML MT per chunk 
+— 
+google+style 
+Google AutoML MT per chunk 
+Gemini post-editing with PE 
+rules 
+gemini 
+Gemini batch translation 
+— 
+gemini+style 
+Gemini batch translation with PE 
+rules 
+— 
+Routing rules: 
+●​
+Target language en → always uses Gemini (no English-target AutoML model). 
+●​
+Traditional Chinese targets → special workflow. 
+●​
+Unsupported Google language pairs → error at job start. 
+
+--- PAGE 8 ---
+None‎
+3.5 Other Endpoints (Reference) 
+Endpoint 
+Purpose 
+Relevant to 
+Express? 
+GET /health 
+Liveness probe 
+Ops only 
+GET /ready 
+Readiness probe 
+Ops only 
+POST 
+/finetune_translation 
+Interactive refinement of a 
+single segment 
+Optional future 
+add-on feature 
+POST /refresh_rules 
+Clear PE rule cache, re-fetch 
+Sheets 
+Admin only 
+Lab-only endpoints (/rules/..., /suggest_rule_changes) are gated by feature flags and not 
+required for Express integration. 
+ 
+4. How Translation Works Internally 
+4.1 Standard Workflow 
+Used for most text — including Adobe Express canvas text overlays when content_type is not 
+SRT-specific. 
+flowchart TD 
+    START[Job started] --> VALIDATE[Validate method & language 
+pair] 
+    VALIDATE --> DNT{enable_dnt?} 
+    DNT -->|Yes| FETCH_DNT[Load DNT prompt from Sheets] 
+    DNT -->|No| ENGINE 
+    FETCH_DNT --> ENGINE{engine_type} 
+ 
+    ENGINE -->|google| MT[Parallel AutoML per chunk] 
+    MT --> STYLE1{method ends with +style?} 
+
+--- PAGE 9 ---
+None‎
+    STYLE1 -->|Yes| PE1[Gemini style correction] 
+    STYLE1 -->|No| DONE1[Return machine_translations] 
+    PE1 --> DONE2[Return translations + changes] 
+ 
+    ENGINE -->|gemini| GEM[Gemini translate_batch with PE rules] 
+    GEM --> DONE3[Return translations + changes] 
+PE rules injection: Before calling Gemini, the backend loads: 
+●​
+Universal rules (all content types) 
+●​
+Language-specific rules (per target language column in AI PE Sheet) 
+●​
+Content-type persona and style guides (when applicable) 
+●​
+SRT-specific rules (when content_type == "Video subtitle (SRT)") 
+Rules are cached on disk (/tmp) and refreshed via POST /refresh_rules or pod restart. 
+4.2 SRT Subtitle Workflow 
+When content_type is "Video subtitle (SRT)", a two-phase pipeline runs instead of 
+per-chunk MT: 
+flowchart TD 
+    S1[Phase 1: Concatenate all cue texts] --> S2[Translate full 
+paragraph<br/>Google or Gemini] 
+    S2 --> S3{method ends with +style?} 
+    S3 -->|Yes| S4[Phase 2: Gemini rebalance<br/>Map translation 
+back to timecodes] 
+    S3 -->|No| S5[Split Phase 1 output per cue] 
+    S4 --> S6[Store in translations + srt_output] 
+    S5 --> S6 
+Why two phases? Subtitle cues are short fragments. Translating each cue in isolation loses 
+sentence context. Phase 1 translates the full paragraph; Phase 2 (Gemini) redistributes the 
+translation across original cue boundaries using SRT-specific rules from Google Sheets. 
+Chunk ID convention for SRT: chunk_0, chunk_1, … plus optional _srt_source metadata key. 
+Adobe Express caveat: The built-in Caption Video feature produces a burnt-in caption layer. The 
+Add-on SDK cannot read timed caption track data today. The SRT workflow is most relevant when 
+the add-on (or Plan B) sends pre-parsed SRT cue text as chunks. 
+
+--- PAGE 10 ---
+None‎
+4.3 Job Lifecycle & Limits 
+Constraint 
+Value 
+Max chunks per request 
+2,000 
+Max characters per chunk 
+5,000 
+Max active jobs (concurrent) 
+Configured server-side; excess returns 429 
+Job storage 
+In-memory; deleted after terminal status poll 
+Poll timeout (Streamlit client) 
+30 minutes wall-clock 
+Progress phases exposed to callers include: machine_translation, style_correction, 
+gemini_translation, srt_phase1, srt_phase2, completed. 
+ 
+5. How Adobe Express Calls LocSync 
+5.1 Add-on Runtime Model 
+Adobe Express Add-ons split into two sandboxes. Only the UI iframe can call external APIs. 
+flowchart TB 
+    subgraph Express["Adobe Express Editor"] 
+        UI["UI iframe<br/>(LocSync panel)"] 
+        DS["Document Sandbox<br/>(@express-document-sdk)"] 
+        UI <-->|Comlink apiProxy| DS 
+    end 
+ 
+    UI -->|fetch POST + poll GET| API["LocSync MT API"] 
+    DS -->|allTextContent| READ[Read TextNodes] 
+    DS -->|fullContent.text| WRITE[Write translations] 
+ 
+
+--- PAGE 11 ---
+None‎
+Runtime 
+Can network? 
+Can touch document? 
+UI iframe 
+✅ fetch() to LocSync API 
+❌ 
+Document Sandbox 
+❌ 
+✅ Read/write text, styles, layout 
+5.2 End-to-End Integration Flow 
+sequenceDiagram 
+    participant User 
+    participant Panel as LocSync Add-on Panel 
+    participant Sandbox as Document Sandbox 
+    participant API as LocSync MT API 
+ 
+    User->>Panel: Select target language, click Translate 
+    Panel->>Sandbox: getSelectedTextNodes() or allTextContent 
+    Sandbox-->>Panel: [{ id, text }, ...] 
+ 
+    Panel->>API: POST /translate_chunks_start 
+    API-->>Panel: { job_id } 
+ 
+    loop Poll 
+        Panel->>API: GET /translate_chunks_status/{job_id} 
+        API-->>Panel: progress / completed 
+    end 
+ 
+    Panel->>Sandbox: applyTranslations({ id: translatedText }) 
+    Sandbox->>Sandbox: fullContent.text = translatedText 
+    Sandbox-->>User: Canvas updated, styles preserved 
+Recommended add-on steps: 
+1.​ Read — Use allTextContent or selection APIs to collect { nodeId: text }. 
+2.​ Map — Convert node IDs to chunk keys (e.g. "node_abc123": "Hello world"). 
+3.​ Translate — POST to LocSync with content_type: "Video subtitle (SRT)" when 
+translating subtitle-like text. 
+4.​ Poll — Adaptive interval: 1 s for first 10 polls, then 2–3 s (same pattern as 
+LocSync/app/translation/translation_engine.py). 
+
+--- PAGE 12 ---
+None‎
+5.​ Write back — Pass translations to the sandbox; set fullContent.text per node. 
+6.​ Handle errors — Show 401 (bad token), 429 (retry later), error status message from job. 
+5.3 Example: Add-on UI iframe (JavaScript) 
+const API_BASE = "https://your-locsync-api.example.com"; 
+const TOKEN = await 
+addOnUISdk.clientStorage.getItem("locsync_token"); 
+ 
+async function translateChunks(chunks, sourceLang, targetLang) { 
+  const startResp = await 
+fetch(`${API_BASE}/translate_chunks_start`, { 
+    method: "POST", 
+    headers: { 
+      "Content-Type": "application/json", 
+      "X-Api-Token": TOKEN, 
+    }, 
+    body: JSON.stringify({ 
+      source_lang: sourceLang, 
+      target_lang: targetLang, 
+      chunks, 
+      method: "gemini+style", 
+      content_type: "Video subtitle (SRT)", 
+    }), 
+  }); 
+  if (!startResp.ok) throw new Error(`Start failed: 
+${startResp.status}`); 
+  const { job_id } = await startResp.json(); 
+ 
+  for (let i = 0; ; i++) { 
+    await sleep(i < 10 ? 1000 : i < 30 ? 2000 : 3000); 
+    const statusResp = await fetch( 
+      `${API_BASE}/translate_chunks_status/${job_id}`, 
+      { headers: { "X-Api-Token": TOKEN } } 
+    ); 
+    const data = await statusResp.json(); 
+
+--- PAGE 13 ---
+None‎
+None‎
+    if (data.status === "completed") return data.translations; 
+    if (data.status === "error") throw new 
+Error(data.error_message); 
+    updateProgressUI(data.processed_chunks, data.total_chunks, 
+data.current_phase); 
+  } 
+} 
+5.4 Example: Document Sandbox (JavaScript) 
+import addOnSandboxSdk from "add-on-sdk-document-sandbox"; 
+const { runtime } = addOnSandboxSdk.instance; 
+ 
+async function applyTranslations(translations) { 
+  const sandboxApi = await runtime.apiProxy("documentSandbox"); 
+  for (const [nodeId, translatedText] of 
+Object.entries(translations)) { 
+    await sandboxApi.setNodeText(nodeId, translatedText); 
+  } 
+} 
+ 
+// Exposed to UI iframe via runtime.exposeApi() 
+runtime.exposeApi({ applyTranslations }); 
+ 
+6. Integration Prerequisites 
+Before an Adobe Express add-on can call LocSync in production, three gaps must be closed: 
+flowchart LR 
+    A[CORS headers] --> D[Browser add-on can call API] 
+
+--- PAGE 14 ---
+    B[Public HTTPS endpoint] --> D 
+    C[Token distribution] --> D 
+ 
+Prerequisite 
+Current state 
+Action needed 
+CORS 
+Not configured 
+Add Access-Control-Allow-Origin for 
+https://express.adobe.com (and dev origins) 
+on /translate_chunks_* 
+Network 
+access 
+Internal OpenShift 
+service 
+Expose API via Route or API gateway; never call 
+from browser with client_secret — token only 
+Token 
+storage 
+Streamlit uses 
+MT_API_KEY env var 
+Add-on stores token in Client Storage (10 MB per 
+user); consider per-team token rotation 
+Proxy 
+alternative 
+N/A 
+Optional: thin BFF proxy on a public domain that 
+forwards to internal API (keeps MT API private) 
+Security guidance for Adobe discussions: 
+●​
+Do not embed MT_API_KEY in add-on source code shipped to Marketplace. 
+●​
+Prefer org-issued tokens stored per user via Client Storage or an OAuth-style onboarding 
+flow. 
+●​
+The Document Sandbox never sees the token — it stays in the UI iframe only. 
+ 
+7. Subtitling Use-Case Matrix 
+Scenario 
+Express capability 
+today 
+LocSync API path 
+Timestamp 
+preserved? 
+Canvas text overlay 
+(TextNode) 
+✅ Add-on SDK 
+read/write 
+Standard or SRT 
+chunks 
+❌ (no timecodes) 
+Caption Video 
+burnt-in layer 
+❌ SDK cannot read 
+track 
+N/A in Express 
+❌ 
+
+--- PAGE 15 ---
+None‎
+SRT file upload (Plan 
+B) 
+❌ Express cannot 
+import SRT 
+Full SRT two-phase 
+workflow 
+✅ 
+Premiere Pro SRT 
+import 
+N/A (outside 
+Express) 
+Plan B download → 
+import 
+✅ 
+Recommended payload for Express text overlays: 
+{ 
+  "source_lang": "en", 
+  "target_lang": "ja", 
+  "method": "gemini+style", 
+  "content_type": "Video subtitle (SRT)", 
+  "enable_dnt": true, 
+  "chunks": { 
+    "overlay_1": "Don't miss our summer sale.", 
+    "overlay_2": "Shop now at example.com" 
+  } 
+} 
+ 
+8. Error Handling Reference 
+Situation 
+Client behavior 
+401 Unauthorized 
+Prompt user to re-enter or refresh API token 
+429 Too Many Requests 
+Show "server busy" message; retry after 5–10 s 
+status: "error" 
+Display error_message; log job_id for ops 
+Network / CORS failure 
+Check CORS config and API URL reachability 
+Empty translations 
+Treat as failure; do not write blank text to canvas 
+Poll > 30 min 
+Abort; suggest smaller batch or contact ops 
+
+--- PAGE 16 ---
+ 
+ 
+ 

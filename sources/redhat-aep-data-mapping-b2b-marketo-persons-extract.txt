@@ -1,0 +1,1001 @@
+--- PAGE 1 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Title (Display Name)
+Source Data Type**
+Description
+AEP Attribute Name
+Tenent ID
+b2b_marketo_persons
+redhat
+IsPartner
+Is Partner
+boolean
+Partner indicator
+b2b._.isPartner
+redhat
+mktoIsPartner
+Marketo Is Partner
+boolean
+Marketo-specific partner indicator
+b2b._.mktoIsPartner
+redhat
+IsCustomerPortal
+Is Customer Portal
+boolean
+Indicates if person has a customer porta b2b._.IsCustomerPortal
+redhat
+mktoIsCustomer
+Is Customer
+boolean
+Marketo field indicating if person is a cu b2b._.IsCustomer
+redhat
+partnerPersona
+Partner Persona
+string
+Partner persona categorization
+b2b._.partnerPersona
+redhat
+persona
+Persona
+string
+Customer persona categorization
+b2b._.persona
+redhat
+partnerBusinessType
+Partner Business Type
+string
+Type of partner business
+b2b._.partnerBusinessType
+redhat
+redhat
+emailSuspended
+Email Suspended
+boolean
+Indicates if email communications are sub2b._.emailSuspended
+redhat
+emailSuspendedCause
+Email Suspended Cause
+string
+Reason email communications are suspeb2b._.emailSuspendedCause
+redhat
+emailSuspendedAt
+Email Suspended At
+date-time
+Timestamp when email was suspended b2b._.emailSuspendedAt
+redhat
+marketable
+Marketable
+boolean
+Derived marketable indicator
+b2b._.marketable
+redhat
+nonMarketableReason
+Non-Marketable Reason
+string
+Reason person is marked as non-market b2b._.nonMarketableReason
+redhat
+iif(unsubscribed == 'true', 'n', 'y' )
+Marketing Email Consent Value
+text/x.aep-xl
+Email marketing consent value
+consents.marketing.email.val
+redhat
+iif(unsubscribedReason != null && unsubscribedReasoMarketing Email Consent Reason
+text/x.aep-xl
+Reason for email marketing consent choconsents.marketing.email.reason
+redhat
+department
+Department
+string
+Department within the company
+b2b._.department
+redhat
+Company_Division__[c
+Company Division
+string
+Division within the company
+b2b._.Company_Division](pplx://action/followuredhat
+Job_Role__[c
+Job Role
+string
+Person's job role
+b2b._.Job_Role](pplx://action/followup)__c
+redhat
+Language_Preference__[c
+Language Preference
+string
+Preferred language for communications b2b._.Language_Preference](pplx://action/folloredhat
+company
+Company Name
+string
+Name of the company
+b2b.companyName
+redhat
+website
+Company Website
+string
+Company website URL
+b2b.companyWebsite
+redhat
+iif(contactCompany != null && contactCompany != "", Account Key
+text/x.aep-xl
+Associated account key
+b2b.accountKey
+redhat
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead", External Source System Key
+text/x.aep-xl
+External source system key
+extSourceSystemAudit.externalKey
+redhat
+eloquaContactId
+Eloqua Contact ID
+string
+ID from Eloqua marketing automation
+b2b._.eloquaContactId
+redhat
+SourceData
+Target Data set 
+Dataset ID
+Mapping set ID
+Dataflow ID
+Person
+Persons - Marketo
+67535433af65672aef453834
+4d671f14722e444b99c1be8b56ce0665
+03148ffb-3d06-48ee-a617-7e
+
+--- PAGE 2 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+Columns (path)
+DataType
+Identity 
+Identity 
+Namespace
+Array?
+isRequired
+Relationship Mixin or
+Schema Name
+_.
+_redhat.
+b2b._.isPartner
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.mktoIsPartner
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.IsCustomerPortal
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.IsCustomer
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.partnerPersona
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.persona
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.partnerBusinessType
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.emailSuspended
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.emailSuspendedCause
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.emailSuspendedAt
+date-time
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.marketable
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.nonMarketableReason
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+consents.marketing.email.val
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+consents.marketing.email.reason
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.department
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.Company_Division__c
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.Job_Role__c
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.Language_Preference__c
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b.companyName
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b.companyWebsite
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+b2b.accountKey
+object
+FALSE
+N/A
+FALSE
+FALSE
+Account
+B2B Person
+extSourceSystemAudit.externalKey
+object
+TRUE
+b2b_person
+FALSE
+FALSE
+N/A
+B2B Person
+b2b._.eloquaContactId
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+B2B Person
+
+--- PAGE 3 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+Data Governance
+Data Governance
+https://docs.adobe.com/content/help/en/experienchttps://docs.adobe.com/cont
+Mixin
+Classification
+Sample
+Pre-transformations 
+required?
+Transformations Desc  DULE LABELS
+Privacy (GDPR, CCPA)
+standard
+TRUE
+FALSE
+N/A
+N/A
+N/A
+standard
+TRUE
+FALSE
+N/A
+N/A
+N/A
+standard
+TRUE
+FALSE
+N/A
+N/A
+N/A
+standard
+TRUE
+FALSE
+N/A
+N/A
+N/A
+standard
+"Solution Provider"
+FALSE
+N/A
+N/A
+N/A
+standard
+"Decision Maker"
+FALSE
+N/A
+N/A
+N/A
+standard
+"Reseller"
+FALSE
+N/A
+N/A
+N/A
+standard
+TRUE
+FALSE
+N/A
+N/A
+N/A
+standard
+"Bounced"
+FALSE
+N/A
+N/A
+N/A
+standard
+"2023-05-15T10:30:00Z"
+FALSE
+N/A
+N/A
+N/A
+standard
+TRUE
+FALSE
+N/A
+N/A
+N/A
+standard
+"Unsubscribed"
+FALSE
+N/A
+N/A
+N/A
+standard
+"y"
+TRUE
+Converts unsubscribed flN/A
+CONSENT
+standard
+"Not interested"
+TRUE
+Truncates reason to 100 N/A
+CONSENT
+standard
+"Engineering"
+FALSE
+N/A
+N/A
+N/A
+standard
+"IT"
+FALSE
+N/A
+N/A
+N/A
+standard
+"Developer"
+FALSE
+N/A
+N/A
+N/A
+standard
+"en_US"
+FALSE
+N/A
+N/A
+N/A
+standard
+"Acme Corporation"
+FALSE
+N/A
+N/A
+N/A
+standard
+""
+FALSE
+N/A
+N/A
+N/A
+standard
+{"sourceType": "Marketo"
+TRUE
+Creates account key objeN/A
+N/A
+standard
+{"sourceType": "Salesforce
+TRUE
+Creates object based on N/A
+N/A
+standard
+"ELQ12345"
+FALSE
+N/A
+N/A
+N/A
+
+--- PAGE 4 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+CJA
+CJA
+CJA
+tent/help/en/experience-platform/privacy/api/getting-started.html
+Display Name
+Component 
+Type
+Attribution 
+Settings
+Schema ID(copy the 
+Schema ID once its creaed 
+in AEP)
+Is Partner
+Boolean
+N/A
+/schemas/e8a18a194454668
+Marketo Is Partner
+Boolean
+N/A
+/schemas/e8a18a194454668
+Is Customer Portal
+Boolean
+N/A
+/schemas/e8a18a194454668
+Is Customer
+Boolean
+N/A
+/schemas/e8a18a194454668
+Partner Persona
+Text
+N/A
+/schemas/e8a18a194454668
+Persona
+Text
+N/A
+/schemas/e8a18a194454668
+Partner Business Type
+Text
+N/A
+/schemas/e8a18a194454668
+Email Suspended
+Boolean
+N/A
+/schemas/e8a18a194454668
+Email Suspended Cause
+Text
+N/A
+/schemas/e8a18a194454668
+Email Suspended At
+Date-Time
+N/A
+/schemas/e8a18a194454668
+Marketable
+Boolean
+N/A
+/schemas/e8a18a194454668
+Non-Marketable Reason
+Text
+N/A
+/schemas/e8a18a194454668
+Marketing Email Consent
+Text
+N/A
+/schemas/e8a18a194454668
+Marketing Email Reason
+Text
+N/A
+/schemas/e8a18a194454668
+Department
+Text
+N/A
+/schemas/e8a18a194454668
+Company Division
+Text
+N/A
+/schemas/e8a18a194454668
+Job Role
+Text
+N/A
+/schemas/e8a18a194454668
+Language Preference
+Text
+N/A
+/schemas/e8a18a194454668
+Company Name
+Text
+N/A
+/schemas/e8a18a194454668
+Company Website
+Text
+N/A
+/schemas/e8a18a194454668
+Account Key
+Object
+N/A
+/schemas/e8a18a194454668
+External Source Key
+Object
+N/A
+/schemas/e8a18a194454668
+Eloqua Contact ID
+Text
+N/A
+/schemas/e8a18a194454668
+
+--- PAGE 5 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+XDM Script
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+
+--- PAGE 6 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+https://docs.adobe.com/content/help/en/experience-platform/data-governance/labels/api.html
+https://docs.adobe.com/content/help/en/experience-platform/priv
+Label Script
+Privacy Script
+Mockaroo Type
+
+--- PAGE 7 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+https://www.mockaroo.com/schemas/import
+#N/A
+Mockaroo Script (make sure to add ']}' to the end and remove the last comma)
+
+--- PAGE 8 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+
+--- PAGE 9 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+
+--- PAGE 10 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+
+--- PAGE 11 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+
+--- PAGE 12 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId

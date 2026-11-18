@@ -1,0 +1,274 @@
+--- PAGE 1 ---
+None‎
+LocSync and Adobe Express Integration  
+What It Is 
+Build a custom Adobe Express Add-on — a side-panel UI that lives directly inside the Adobe 
+Express editor. Users select subtitle text on their canvas, click "Translate with LocSync," and the 
+translated text is written back to the design without leaving Adobe Express. 
+How It Works 
+Adobe Express Add-ons run in two isolated environments that talk to each other: 
+┌──────────────────────────────────────────────────────────┐ 
+│                  Adobe Express Editor                     │ 
+│                                                           │ 
+│  ┌──────────────────────┐   ┌───────────────────────┐    │ 
+│  │     UI iframe         │   │   Document Sandbox    │    │ 
+│  │  (LocSync panel HTML) │   │  (document read/write)│    │ 
+│  │                       │   │                       │    │ 
+│  │  ✅ fetch() to APIs   │   │  ✅ read text nodes   │    │ 
+│  │  ✅ X-Api-Token auth  │   │  ✅ write translated  │    │ 
+│  │  ❌ no doc access     │   │  ❌ no network calls  │    │ 
+│  └──────────┬────────────┘   └───────────┬───────────┘    │ 
+│             │       Comlink (bidirectional)│               │ 
+│             └─────────────────────────────┘               │ 
+└──────────────────────────────────────────────────────────┘ 
+Step-by-step flow: 
+1.​ User opens the LocSync panel in Adobe Express 
+2.​ User selects the subtitle text block(s) on the canvas 
+3.​ User picks source and target language in the panel, then clicks Translate 
+4.​ The UI iframe calls POST /translate_chunks_start on the LocSync MT API with the 
+X-Api-Token header 
+5.​ The translated text is received in the UI iframe 
+6.​ The result is passed via Comlink to the Document Sandbox 
+7.​ The Sandbox uses fullContent.text (via @express-document-sdk) to write the 
+translated text back to the TextNode 
+
+--- PAGE 2 ---
+8.​ The subtitle text on the canvas is updated in-place, preserving all styling 
+What Adobe Added in Spring 2026 That Makes This Work 
+The Spring 2026 Add-on SDK update introduced: 
+●​
+allDescendants and allTextContent accessors — read the full text content of every 
+node on a page, including nested elements 
+●​
+TextContentModel interface — structured access to text data from any node 
+●​
+fullContent.text setter — direct text replacement while preserving character and 
+paragraph styles 
+These APIs allow the add-on to reason about the document at a semantic level (e.g., "this text is 
+grouped with a video frame, so it is probably a subtitle"), which is exactly what LocSync needs. 
+Technical Requirements 
+Item 
+Detail 
+Add-on language 
+JavaScript / TypeScript + HTML (React or vanilla) 
+LocSync backend 
+changes 
+Add CORS header allowing express.adobe.com origin — no API 
+logic changes required 
+Authentication 
+Store X-Api-Token in Add-on Client Storage (up to 10 MB per 
+user, persistent in browser) 
+manifest.json 
+No special oauth entry needed for token-based auth; add 
+sandbox: ["allow-popups"] if a login flow is introduced later 
+Adobe account 
+Adobe Developer Console account (free); private add-on 
+deployment skips Marketplace review 
+SDK version 
+Add-on SDK manifest version 2; @express-document-sdk 
+Spring 2026 stable 
+Limitations 
+●​
+Adobe Express's built-in Caption Video feature burns captions into the video as a rendered 
+layer; the Add-on SDK cannot currently access the timed subtitle track data (timestamps, 
+SRT structure) of that layer. The add-on targets text overlay nodes placed on the canvas — 
+
+--- PAGE 3 ---
+None‎
+which covers most design-driven subtitle use cases (social videos, presentations, branded 
+clips). 
+●​
+If the user needs full SRT with precise timestamps, Plan B is the better path. 
+Estimated Effort 
+Phase 
+Work 
+Timeline 
+Proof of concept 
+UI panel + fetch LocSync API + write 
+one TextNode 
+1–2 weeks 
+Full add-on 
+Language selector, multi-node scan, 
+error handling, Token UI 
+3–4 weeks 
+Internal 
+deployment 
+Private Adobe Developer Console 
+deployment  
+1 day 
+Marketplace 
+submission 
+Adobe review process 
+1–2 weeks (if public 
+listing is desired) 
+ 
+Plan B: LocSync SRT Subtitle File 
+Workflow 
+What It Is 
+Extend LocSync's existing Streamlit application with a dedicated "Video Subtitle Translation" feature. 
+Users upload a video file or an existing SRT file, LocSync extracts the text content, sends it through 
+the translation API, reassembles the result back into a valid SRT file with all original timestamps 
+preserved, and the user downloads the translated SRT. 
+How It Works 
+User uploads the SRT file to LocSync 
+
+--- PAGE 4 ---
+    │ 
+    ▼ 
+Parse directly (no external API needed) 
+    │ 
+    ▼ 
+Split SRT into timed text segments 
+Preserve: sequence numbers + timestamp lines 
+Extract: subtitle text lines only 
+    │ 
+    ▼ 
+Send text segments to LocSync MT API 
+(POST /translate_chunks_start with X-Api-Token) 
+    │ 
+    ▼ 
+Reassemble: translated text + original timestamps → new SRT file 
+    │ 
+    ▼ 
+User downloads translated SRT 
+    │ 
+    ▼ 
+User imports SRT into Adobe Premiere Pro 
+(File → Import → drag SRT onto timeline → caption track 
+auto-created) 
+Two Sub-variants 
+Plan B1 — SRT file upload only (no Adobe API dependency): 
+●​
+User must already have an SRT file (from Adobe Express Caption Video export, or any other 
+source) 
+●​
+LocSync parses the SRT, translates the text, outputs a new SRT 
+●​
+Zero dependency on Adobe APIs 
+●​
+Implementable entirely within LocSync's existing Python/Streamlit stack 
+Plan B2 — Video upload with Adobe Transcribe API: 
+●​
+User uploads a video directly; LocSync calls POST 
+https://audio-video-api.adobe.io/v1/transcribe to get a timestamped SRT 
+
+--- PAGE 5 ---
+●​
+Requires an Adobe Developer account with Audio/Video Firefly Services access (enterprise 
+beta as of June 2026) 
+●​
+Adds LocSync's translation quality on top of Adobe's ASR transcription 
+Technical Requirements 
+Item 
+Detail 
+New Python logic 
+SRT file parser/reassembler using Python re and string 
+operations — no new PyPI packages 
+LocSync backend 
+changes 
+None for Plan B1; for Plan B2, add Adobe Transcribe API call in 
+locsync-translation/ 
+New Streamlit page 
+Add a "Subtitle Translation" tab or page in the LocSync frontend 
+Adobe Audio API (B2 
+only) 
+Requires separate Adobe Developer Console project with 
+Audio/Video API access 
+Output 
+.srt file download via st.download_button 
+Adobe Express 
+dependency 
+None — the output SRT is used in Premiere Pro, not Express 
+Limitations 
+●​
+The final output (translated SRT) must be imported into Adobe Premiere Pro, not Adobe 
+Express. Adobe Express does not support SRT file import as of June 2026. 
+●​
+Plan B2 depends on Adobe Audio/Video API availability, which is an enterprise-gated beta 
+program. 
+Estimated Effort 
+Phase 
+Work 
+Timeline 
+Plan B1 (SRT only) 
+SRT parser + translate + reassemble + Streamlit 
+UI 
+1–2 weeks 
+
+--- PAGE 6 ---
+Plan B2 (video 
+upload) 
+Add Adobe Transcribe API call + video upload UI 
++1–2 
+weeks 
+ 
+Side-by-Side Comparison 
+Dimension 
+Plan A (Express Add-on) 
+Plan B (SRT Workflow in 
+LocSync) 
+Where the user works 
+Inside Adobe Express 
+Inside LocSync, then 
+Premiere Pro 
+Subtitle timestamps 
+preserved 
+❌ Canvas text only; no SRT 
+track access 
+✅ Full SRT with original 
+timestamps 
+External dependency 
+Adobe Add-on SDK (free, 
+stable) 
+Plan B2 requires Adobe 
+Audio API (enterprise 
+beta) 
+LocSync backend 
+changes 
+CORS header only 
+SRT parsing logic + 
+optional Adobe API call 
+New 
+language/framework 
+JavaScript/TypeScript (new 
+codebase) 
+Python only (within 
+existing stack) 
+Estimated dev time 
+4–6 weeks full version; 1–2 
+weeks PoC 
+1–2 weeks (B1) or 2–4 
+weeks (B2) 
+User experience 
+⭐⭐⭐⭐ Seamless, 
+in-context translation 
+⭐⭐ File in / file out, tool 
+switch required 
+Adobe Marketplace 
+potential 
+✅ Can be published as public 
+add-on 
+N/A 
+OpenShift compatible 
+✅ Add-on runs in Adobe's 
+cloud, not ours 
+✅ Runs fully in LocSync's 
+existing containers 
+Best for 
+Social videos, branded 
+content, text overlays 
+Scripted video, episodic 
+content, precise subtitles 
+
+--- PAGE 7 ---
+Recommendation 
+Run Plan A and Plan B1 in parallel: 
+●​
+Plan A delivers the "translate inside Adobe Express" experience that is the core of this 
+initiative. Start with a proof of concept targeting simple TextNode translation. 
+●​
+Plan B1 (SRT file workflow) is low-risk and fast to build. It closes the gap for users who need 
+timestamp-precise subtitle files and already work in Premiere Pro. 
+Together they cover both the design-first user (social media, marketing) and the video-production 
+user (episodic, localization-focused) without competing with each other. 
+ 

@@ -1,0 +1,2019 @@
+--- PAGE 1 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Title (Display Name)
+Source Data Type**
+Description
+AEP Attribute Name
+b2b_marketo_persons
+IsPartner
+Is Partner
+boolean
+Partner indicator
+b2b._.isPartner
+mktoIsPartner
+Marketo Is Partner
+boolean
+Marketo-specific partner indicator
+b2b._.mktoIsPartner
+IsCustomerPortal
+Is Customer Portal
+boolean
+Indicates if person has a customer portal account
+b2b._.IsCustomerPortal
+mktoIsCustomer
+Is Customer
+boolean
+Marketo field indicating if person is a customer
+b2b._.IsCustomer
+partnerPersona
+Partner Persona
+string
+Partner persona categorization
+b2b._.partnerPersona
+persona
+Persona
+string
+Customer persona categorization
+b2b._.persona
+partnerBusinessType
+Partner Business Type
+string
+Type of partner business
+b2b._.partnerBusinessType
+emailSuspended
+Email Suspended
+boolean
+Indicates if email communications are suspended
+b2b._.emailSuspended
+emailSuspendedCause
+Email Suspended Cause
+string
+Reason email communications are suspended
+b2b._.emailSuspendedCause
+emailSuspendedAt
+Email Suspended At
+date-time
+Timestamp when email was suspended
+b2b._.emailSuspendedAt
+marketable
+Marketable
+boolean
+Derived marketable indicator
+b2b._.marketable
+nonMarketableReason
+Non-Marketable Reason
+string
+Reason person is marked as non-marketable
+b2b._.nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+Marketing Email Consent Value
+text/x.aep-xl
+Email marketing consent value
+consents.marketing.email.val
+iif(unsubscribedReason != null && unsubscribedReasoMarketing Email Consent Reason
+text/x.aep-xl
+Reason for email marketing consent choice
+consents.marketing.email.reason
+department
+Department
+string
+Department within the company
+b2b._.department
+Company_Division__[c
+Company Division
+string
+Division within the company
+b2b._.Company_Division](pplx://action/followu
+Job_Role__[c
+Job Role
+string
+Person's job role
+b2b._.Job_Role](pplx://action/followup)__c
+Language_Preference__[c
+Language Preference
+string
+Preferred language for communications
+b2b._.Language_Preference](pplx://action/follo
+company
+Company Name
+string
+Name of the company
+b2b.companyName
+website
+Company Website
+string
+Company website URL
+b2b.companyWebsite
+iif(contactCompany != null && contactCompany != "", Account Key
+text/x.aep-xl
+Associated account key
+b2b.accountKey
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead", External Source System Key
+text/x.aep-xl
+External source system key
+extSourceSystemAudit.externalKey
+eloquaContactId
+Eloqua Contact ID
+string
+ID from Eloqua marketing automation
+b2b._.eloquaContactId
+LeanData_Audit_Log__c
+LeanData Audit Log
+string
+LeanData - Audit Log
+leanDataAuditLog
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData Account Match Timestamp
+date-time
+Timestamp of LeanData - Account Match
+leanDataAccountMatchTimestamp
+LeanData_Graph_Timestamp__c
+LeanData Graph Timestamp
+date-time
+Timestamp of LeanData - Graph
+leanDataGraphTimestamp
+LeanData__Reporting_Matched_Account__c
+LeanData Matched Account
+string
+Matched RHSC Account with LeanData
+leanDataMatchedAccount
+LeanData__Reporting_Timestamp__c
+LeanData Reporting Timestamp
+date-time
+Timestamp of the LeanData Matched Account Reporting
+leanDataReportingTimestamp
+isLead
+Is Lead
+boolean
+Lead Flag
+isLead
+leadPerson
+Lead Person
+string
+Lead Person
+leadPerson
+leadRevenueCycleModelId
+Lead Revenue Cycle Model
+string
+Revenue Cycle Model ID for the Lead
+leadRevenueCycleModel
+leadRevenueStageId
+Lead Revenue Stage
+string
+Lead Revenue Stage ID for the Lead
+leadRevenueStage
+sfdcLeadId
+Lead ID
+string
+Lead ID from RHSC
+leadID
+sfdcId
+Salesforce ID
+string
+RHSC ID
+salesforceID
+sfdcAccountId
+Salesforce Account ID
+string
+Account ID from RHSC
+salesforceAccountID
+sfdcContactId
+Salesforce Contact ID
+string
+Conntact ID from RHSC
+salesforceContactID
+sfdcType
+Salesforce Type
+string
+Person Type from RHSC
+salesforceType
+Relationship_Type__c
+Relationship Type
+string
+Relationship Type to Red Hat
+relationshipType
+Mkto Pref - PE- AI/Artificial Intelligence
+Marketo Customer Preference Artificial Intelligence
+boolean
+Marketo Customer Preference Center Artificial Intelligence
+mktoPrefArtificialIntelligence
+Mkto Pref - PE - Automation
+Marketo Customer Preference Automation
+boolean
+Marketo Customer Preference Center Automation
+mktoPrefAutomation
+Mkto Pref - PE - Cloud-native development
+Marketo Customer Preference Cloud Native Development
+boolean
+Marketo Customer Preference Center Cloud Native Development
+mktoPrefCloudnativedevelopment
+Mkto Pref - PE - DevOps
+Marketo Customer Preference DevOps
+boolean
+Marketo Customer Preference Center DevOps
+mktoPrefDevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Marketo Customer Preference Hybrid Cloud Infrastructure
+boolean
+Marketo Customer reference Center Hybrid Cloud Infrastructure
+mktoPrefHybridcloudinfrastructure
+Mkto Pref - PE - Integration
+Marketo Customer Preference Integration
+boolean
+Marketo Customer Preference Center Integration
+mktoPrefIntegration
+
+--- PAGE 2 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Title (Display Name)
+Source Data Type**
+Description
+AEP Attribute Name
+Mkto Pref - PE - Kubernetes and containers
+Marketo Customer Preference Kubernetes Containers
+boolean
+Marketo Customer Preference Center Kubernetes and Containers
+mktoPrefKubernetesandcontainers
+Mkto Pref - PE - Linux
+Marketo Customer Preference Linux
+boolean
+Marketo Customer Preference Center Linux
+mktoPrefLinux
+Mkto Pref - PE - Sell Effectively
+Marketo Partner Preference  Sell Effectively
+boolean
+Marketo Partner Preference Center Sell Effectively
+mktoPrefSellEffectively
+Mkto Pref - PE - AI
+Marketo Partner Preference AI
+boolean
+Marketo Partner Preference Center AI
+mktoPrefAI
+Mkto Pref - PE - Application development
+Marketo Partner Preference Application Development
+boolean
+Marketo Partner Preference Center Application Development
+mktoPrefApplicationdevelopment
+Mkto Pref - PE - Application services
+Marketo Partner Preference Application Services
+boolean
+Marketo Partner Preference Center Application Services
+mktoPrefApplicationservices
+Mkto Pref - PE - Build Smart
+Marketo Partner Preference Build Smart
+boolean
+Marketo Partner Preference Center Build Smart
+mktoPrefBuildSmart
+Mkto Pref - PE - Cloud services
+Marketo Customer/Partner Preference Cloud Services
+boolean
+Marketo Customer/Partner Preference Center Cloud services (needs to 
+be combined with Partner Customer Type)
+mktoPrefCloudservices
+Mkto Pref - PE - Containers
+Marketo Partner Preference Containers
+boolean
+Marketo Partner Preference Center Containers
+mktoPrefContainers
+Mkto Pref - PE - Data services
+Marketo Partner Preference Data Services
+boolean
+Marketo Partner Preference Center Data services
+mktoPrefDataservices
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Marketo Partner Preference Hybrid Cloud Cloud Computing
+boolean
+Marketo Partner reference Center Hybrid Cloud and Cloud Computing
+mktoPrefHybridCloudCloudcomputing
+Mkto Pref - PE - Red Hat Ansible Automation
+Marketo Partner Preference Red Hat Ansible Automation
+boolean
+Marketo Partner Preference Center Red Hat Ansible Automation
+mktoPrefRedHatAnsibleAutomation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Marketo Partner Preference Red Hat Enterprise Linux
+boolean
+Marketo Partner Preference Center Red Hat Enterprise Linux
+mktoPrefRedHatEnterpriseLinux
+Mkto Pref - PE - Red Hat OpenShift
+Marketo Partner Preference Red Hat Open Shift
+boolean
+Marketo Partner Preference Center Red Hat OpenShift
+mktoPrefRedHatOpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Marketo Partner Preference Red Hat Open Stack
+boolean
+Marketo Partner Preference Red Hat OpenStack
+mktoPrefRedHatOpenStack
+Mkto Pref - PE - Security
+Marketo Partner Preference Security
+boolean
+Marketo Partner Preference Center Security
+mktoPrefSecurity
+Mkto Pref - PE - Service With Confidence
+Marketo Partner Preference Service With Confidence
+boolean
+Marketo Partner Preference Center Service With Confidence
+mktoPrefServiceWithConfidence
+Mkto Pref - PE - Virtualization
+Marketo Partner Preference Virtualization
+boolean
+Marketo Partner Preference Center Virtualization
+mktoPrefVirtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Marketo Partner Preference Vulnerability Scanner Services
+boolean
+Marketo Partner Preference Center Vulnerability Scanner Services
+mktoPrefVulnerabilityScannerServices
+Mkto Pref - Partner Customer
+Marketo Preference Partner Customer Type
+string
+Marketo Preference Center Partner or Customer
+mktoPrefPartnerCustomerType
+Mkto Pref - PE - Partner training and certification
+Marketo Partner Preference Training Certification
+boolean
+Marketo Partner Preference Center Training and Certification
+mktoPrefPartnerTrainingCertification
+Mkto Pref - PE - Marketing enablement
+Marketo Partner Preference Marketing Enablement
+boolean
+Marketo Partner Preference Center Marketing Enablement
+mktoPrefMarketingEnablement
+Mkto Pref - PE - Sales enablement
+Marketo Partner Preference Sales Enablement
+boolean
+Marketo Partner Preference Center Sales Enablement
+mktoPrefSalesenablement
+Mkto Pref - PE - Edge computing
+Marketo Customer Preference Edge Computing
+boolean
+Marketo Customer Preference Center Edge Computing
+mktoPrefEdgeComputing
+SourceData
+Target Data set 
+Dataset ID
+Mapping set ID
+Person
+Persons - Marketo
+67535433af65672aef453834
+4d671f14722e444b99c1be8b56ce0665
+
+--- PAGE 3 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+Tenent ID
+Columns (path)
+DataType
+Identity 
+Identity 
+Namespace
+Array?
+isRequired
+Relationship
+_.
+redhat
+_redhat.
+redhat
+b2b._.isPartner
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.mktoIsPartner
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.IsCustomerPortal
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.IsCustomer
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.partnerPersona
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.persona
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.partnerBusinessType
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.emailSuspended
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.emailSuspendedCause
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.emailSuspendedAt
+date-time
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.marketable
+boolean
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.nonMarketableReason
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+consents.marketing.email.val
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+consents.marketing.email.reason
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.department
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.Company_Division__c
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.Job_Role__c
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b._.Language_Preference__c
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b.companyName
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+b2b.companyWebsite
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+redhat
+b2b.accountKey
+object
+FALSE
+N/A
+FALSE
+FALSE
+Account
+redhat
+extSourceSystemAudit.externalKey
+object
+TRUE
+b2b_person
+FALSE
+FALSE
+N/A
+redhat
+b2b._.eloquaContactId
+string
+FALSE
+N/A
+FALSE
+FALSE
+N/A
+redhat
+string
+redhat
+date-time
+redhat
+date-time
+redhat
+string
+redhat
+date-time
+redhat
+boolean
+redhat
+string
+redhat
+string
+redhat
+string
+redhat
+string
+redhat
+string
+redhat
+string
+redhat
+string
+redhat
+string
+redhat
+string
+redhat
+_redhat.mktoPrefArtificialIntelligence
+boolean
+redhat
+_redhat.mktoPrefAutomation
+boolean
+redhat
+_redhat.mktoPrefCloudnativedevelopment
+boolean
+redhat
+_redhat.mktoPrefDevOps
+boolean
+redhat
+_redhat.mktoPrefHybridcloudinfrastructure
+boolean
+redhat
+_redhat.mktoPrefIntegration
+boolean
+
+--- PAGE 4 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Tenent ID
+Columns (path)
+DataType
+Identity 
+Identity 
+Namespace
+Array?
+isRequired
+Relationship
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+redhat
+_redhat.mktoPrefKubernetesandcontainers
+boolean
+redhat
+_redhat.mktoPrefLinux
+boolean
+redhat
+_redhat.mktoPrefSellEffectively
+boolean
+redhat
+_redhat.mktoPrefAI
+boolean
+redhat
+_redhat.mktoPrefApplicationdevelopment
+boolean
+redhat
+_redhat.mktoPrefApplicationservices
+boolean
+redhat
+_redhat.mktoPrefBuildSmart
+boolean
+redhat
+_redhat.mktoPrefCloudservices
+boolean
+redhat
+_redhat.mktoPrefContainers
+boolean
+redhat
+_redhat.mktoPrefDataservices
+boolean
+redhat
+_redhat.mktoPrefHybridCloudCloudcomputing
+boolean
+redhat
+_redhat.mktoPrefRedHatAnsibleAutomation
+boolean
+redhat
+_redhat.mktoPrefRedHatEnterpriseLinux
+boolean
+redhat
+_redhat.mktoPrefRedHatOpenShift
+boolean
+redhat
+_redhat.mktoPrefRedHatOpenStack
+boolean
+redhat
+_redhat.mktoPrefSecurity
+boolean
+redhat
+_redhat.mktoPrefServiceWithConfidence
+boolean
+redhat
+_redhat.mktoPrefVirtualization
+boolean
+redhat
+_redhat.mktoPrefVulnerabilityScannerServices
+boolean
+redhat
+_redhat.mktoPrefPartnerCustomerType
+boolean
+redhat
+_redhat.mktoPrefPartnerTrainingCertification
+boolean
+redhat
+_redhat.mktoPrefMarketingEnablement
+boolean
+redhat
+_redhat.mktoPrefSalesenablement
+boolean
+redhat
+_redhat.mktoPrefEdgeComputing
+boolean
+Dataflow ID
+03148ffb-3d06-48ee-a617-7eac3
+
+--- PAGE 5 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+Data Governance
+https://docs.adobe.com/content/help/en/experienc
+Mixin or
+Schema Name
+Mixin
+Classification
+Sample
+Pre-transformations 
+required?
+Transformations Desc  DULE LABELS
+B2B Person
+standard
+TRUE
+FALSE
+N/A
+N/A
+B2B Person
+standard
+TRUE
+FALSE
+N/A
+N/A
+B2B Person
+standard
+TRUE
+FALSE
+N/A
+N/A
+B2B Person
+standard
+TRUE
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"Solution Provider"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"Decision Maker"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"Reseller"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+TRUE
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"Bounced"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"2023-05-15T10:30:00Z"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+TRUE
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"Unsubscribed"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"y"
+TRUE
+Converts unsubscribed flN/A
+B2B Person
+standard
+"Not interested"
+TRUE
+Truncates reason to 100 N/A
+B2B Person
+standard
+"Engineering"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"IT"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"Developer"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"en_US"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+"Acme Corporation"
+FALSE
+N/A
+N/A
+B2B Person
+standard
+""
+FALSE
+N/A
+N/A
+B2B Person
+standard
+{"sourceType": "Marketo"
+TRUE
+Creates account key objeN/A
+B2B Person
+standard
+{"sourceType": "Salesforce
+TRUE
+Creates object based on N/A
+B2B Person
+standard
+"ELQ12345"
+FALSE
+N/A
+N/A
+
+--- PAGE 6 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Data Governance
+https://docs.adobe.com/content/help/en/experienc
+Mixin or
+Schema Name
+Mixin
+Classification
+Sample
+Pre-transformations 
+required?
+Transformations Desc  DULE LABELS
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+
+--- PAGE 7 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+Data Governance
+CJA
+CJA
+CJA
+https://docs.adobe.com/content/help/en/experience-platform/privacy/api/getting-started.html
+Privacy (GDPR, CCPA)
+Display Name
+Component 
+Type
+Attribution 
+Settings
+Schema ID(copy the 
+Schema ID once its creaed 
+in AEP)
+N/A
+Is Partner
+Boolean
+N/A
+/schemas/e8a18a194454668
+N/A
+Marketo Is Partner
+Boolean
+N/A
+/schemas/e8a18a194454668
+N/A
+Is Customer Portal
+Boolean
+N/A
+/schemas/e8a18a194454668
+N/A
+Is Customer
+Boolean
+N/A
+/schemas/e8a18a194454668
+N/A
+Partner Persona
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Persona
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Partner Business Type
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Email Suspended
+Boolean
+N/A
+/schemas/e8a18a194454668
+N/A
+Email Suspended Cause
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Email Suspended At
+Date-Time
+N/A
+/schemas/e8a18a194454668
+N/A
+Marketable
+Boolean
+N/A
+/schemas/e8a18a194454668
+N/A
+Non-Marketable Reason
+Text
+N/A
+/schemas/e8a18a194454668
+CONSENT
+Marketing Email Consent
+Text
+N/A
+/schemas/e8a18a194454668
+CONSENT
+Marketing Email Reason
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Department
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Company Division
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Job Role
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Language Preference
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Company Name
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Company Website
+Text
+N/A
+/schemas/e8a18a194454668
+N/A
+Account Key
+Object
+N/A
+/schemas/e8a18a194454668
+N/A
+External Source Key
+Object
+N/A
+/schemas/e8a18a194454668
+N/A
+Eloqua Contact ID
+Text
+N/A
+/schemas/e8a18a194454668
+
+--- PAGE 8 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Data Governance
+CJA
+CJA
+CJA
+https://docs.adobe.com/content/help/en/experience-platform/privacy/api/getting-started.html
+Privacy (GDPR, CCPA)
+Display Name
+Component 
+Type
+Attribution 
+Settings
+Schema ID(copy the 
+Schema ID once its creaed 
+in AEP)
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+
+--- PAGE 9 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+XDM Script
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+8c5058486ea582c76d40f8818a0e8d3b5
+
+--- PAGE 10 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+XDM Script
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+
+--- PAGE 11 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+https://docs.adobe.com/content/help/en/experience-platform/data-governance/labels/api.html
+https://docs.adobe.com/content/help/en/experience-platform/priv
+Label Script
+Privacy Script
+Mockaroo Type
+
+--- PAGE 12 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+https://docs.adobe.com/content/help/en/experience-platform/data-governance/labels/api.html
+https://docs.adobe.com/content/help/en/experience-platform/priv
+Label Script
+Privacy Script
+Mockaroo Type
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+
+--- PAGE 13 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+https://www.mockaroo.com/schemas/import
+#N/A
+Mockaroo Script (make sure to add ']}' to the end and remove the last comma)
+
+--- PAGE 14 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+https://www.mockaroo.com/schemas/import
+#N/A
+Mockaroo Script (make sure to add ']}' to the end and remove the last comma)
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+
+--- PAGE 15 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+
+--- PAGE 16 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+
+--- PAGE 17 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+
+--- PAGE 18 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+
+--- PAGE 19 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+
+--- PAGE 20 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+
+--- PAGE 21 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+
+--- PAGE 22 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing
+
+--- PAGE 23 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+b2b_marketo_persons
+IsPartner
+mktoIsPartner
+IsCustomerPortal
+mktoIsCustomer
+partnerPersona
+persona
+partnerBusinessType
+emailSuspended
+emailSuspendedCause
+emailSuspendedAt
+marketable
+nonMarketableReason
+iif(unsubscribed == 'true', 'n', 'y' )
+iif(unsubscribedReason != null && unsubscribedReaso
+department
+Company_Division__[c
+Job_Role__[c
+Language_Preference__[c
+company
+website
+iif(contactCompany != null && contactCompany != "",
+iif(decode(sfdcType, "Contact", sfdcContactId, "Lead",
+eloquaContactId
+LeanData_Audit_Log__c
+LeanData_Graph_Account_Match_Timestamp__c
+LeanData_Graph_Timestamp__c
+LeanData__Reporting_Matched_Account__c
+LeanData__Reporting_Timestamp__c
+isLead
+leadPerson
+leadRevenueCycleModelId
+leadRevenueStageId
+sfdcLeadId
+sfdcId
+sfdcAccountId
+sfdcContactId
+sfdcType
+Relationship_Type__c
+Mkto Pref - PE- AI/Artificial Intelligence
+Mkto Pref - PE - Automation
+Mkto Pref - PE - Cloud-native development
+Mkto Pref - PE - DevOps
+Mkto Pref - PE - Hybrid cloud infrastructure
+Mkto Pref - PE - Integration
+
+--- PAGE 24 ---
+XDM Schema Name: =B2B Person
+Schema Class: XDM Custom Class, GSS 
+Accounts
+Data Flow:b2b_marketo_persons
+Notes: Reference Document: 
+* Cells in yellow are just examples
+** Columns with blue header are custom to client
+Source (Used for mapping if needed)
+Mkto Pref - PE - Kubernetes and containers
+Mkto Pref - PE - Linux
+Mkto Pref - PE - Sell Effectively
+Mkto Pref - PE - AI
+Mkto Pref - PE - Application development
+Mkto Pref - PE - Application services
+Mkto Pref - PE - Build Smart
+Mkto Pref - PE - Cloud services
+Mkto Pref - PE - Containers
+Mkto Pref - PE - Data services
+Mkto Pref - PE - Hybrid Cloud & Cloud computing
+Mkto Pref - PE - Red Hat Ansible Automation
+Mkto Pref - PE - Red Hat Enterprise Linux
+Mkto Pref - PE - Red Hat OpenShift
+Mkto Pref - PE - Red Hat OpenStack
+Mkto Pref - PE - Security
+Mkto Pref - PE - Service With Confidence
+Mkto Pref - PE - Virtualization
+Mkto Pref - PE - Vulnerability Scanner services
+Mkto Pref - Partner Customer
+Mkto Pref - PE - Partner training and certification
+Mkto Pref - PE - Marketing enablement
+Mkto Pref - PE - Sales enablement
+Mkto Pref - PE - Edge computing

@@ -1,0 +1,697 @@
+--- PAGE 1 ---
+Overview 
+The RHEL AJO B2C pilot leverages only a fraction of the platform capabilities, there is a great opportunity for our team to dive deeper into features 
+and bring new ideas to the table. *We do not need to use or have a use case for every feature. Let’s focus on what makes sense for our work and is 
+scalable!  
+WF Project 
+Objective 
+Create space and structure for the DA team to learn, research, and document use cases to expand use of AJO B2C. By documenting use cases and 
+requirements our team can package these up for IT to prioritize if any additional development is needed.  
+ 
+Focus areas [Q4] 
+Feature 
+Status 
+Use Case Identified? 
+​ Decision Capabilities 
+-​
+Configure custom attributes: Tailor the 
+item catalog to your specific requirements 
+by setting up custom attributes into the 
+catalog’s schema. 
+-​
+Create decision items to show to your 
+targeted audience. 
+-​
+Decision Rules 
+IT Discover | 
+10/20 kickoff 
+Yes 
+​ Dynamic content  
+-​
+Use conditional rules to add dynamic 
+content into your messages, both in 
+personalization expressions and as 
+content component variants in the Email 
+Designer. 
+Ideation 
+Yes - OCP new SKUs  
+ 
+
+--- PAGE 2 ---
+Focus areas [CY27Q1] 
+Projects + Use cases 
+​ Partner newsletter 
+​ OpenShift SKUs 
+​ RHEL Learn Mid 
+ 
+Feature 
+Status 
+Notes 
+​ Decision Capabilities 
+​ Decision Rules 
+Planned for Q1 
+production 
+Partner use case - Lizzy leading 
+​ Assign priority scores  
+​ Use formulas to rank journeys 
+Planned for Q1 discovery 
+Looped in Eric and Ashleigh to 
+align to DG ( align to 
+framework/patterns) 
+​ Multilingual content 
+Planned for Q1 discovery 
+ 
+ 
+Focus areas CY27Q2-Q4 
+Projects + Use cases 
+​ Red Hat Summit 2027 Post Event 
+Conflict management and prioritization  
+​ Conflict detection tool 
+Content management 
+​ Content optimization 
+​ Content experiment 
+​ Conditional rules 
+
+--- PAGE 3 ---
+Activities 
+​ Optimize (journey level) 
+​ Run path experiments - Test different paths based on random splits to determine which performs best according to predefined 
+success metrics (for example: conversion rate, revenue, engagement). 
+​ Leverage targeting rules - Define specific rules that must be met for a customer to be eligible to enter one of the journey paths, 
+based on audience segments, profile attributes, or contextual data. This ensures the right audience enters the specified path. 
+​ Apply conditions - Create conditional paths based on specific criteria such as data sources, time, date, percentage splits, or profile 
+caps. This is the equivalent of the former Condition activity. 
+ 
+Event Modernization_GH
+
+--- PAGE 4 ---
+AJO B2C Use Case and Nurture Template 
+This template is designed to structure the documentation of new AJO B2C use cases and their corresponding email nurture programs, ensuring 
+alignment with program objectives and technical dependencies. 
+ 
+IT example:  [IT Business Use Case Example] 
+ 
+DA template: 
+ 
+Use Case Template AJO B2C_Make Copy
+ 
+
+--- PAGE 5 ---
+ 
+Business Case | AJO - Decisioning 
+Field 
+Description 
+Use Case Title 
+Partner Personalized Newsletter 
+Feature Focus Area 
+Decision Management (Offer Decisioning & Decision Policies) 
+Content Fragments & Dynamic Content 
+Offer and Decisioning (Build Rules) 
+Web Channel (eventual ability to work with personalization campaigns)  
+Translations / Localization 
+FUTURE STATE - Use AI to help prioritize topic placement based on what is popular  
+Why 
+Current partners have 3 newsletters: Partner Pulse, Distributors, TechDev 
+ 
+While each has a unique target, it’s possible for someone to qualify for multiple. AJO offers 
+and decisioning can help better personalize each newsletter, prioritizing the most relevant 
+content to them based on their Partner Module/Channel and language. Add’l requirements 
+may include by region and/or product.  
+What 
+Decision Management (Offer Decisioning & Decision Policies) 
+Content Fragments & Dynamic Content 
+Offer and Decisioning (Build Rules) 
+Web Channel (eventual ability to work with personalization campaigns)  
+Translations / Localization 
+How 
+https://miro.com/app/board/uXjVHE6K58o=/ 
+Dependencies 
+ 
+DA Lead 
+ 
+Grace Hooper Lizzy Ackerman
+Priority 
+(e.g., High, Medium, Low) 
+
+--- PAGE 6 ---
+Field 
+Description 
+Status 
+(e.g., Draft, In Review, Ready for Dev) 
+ 
+GH + Cursor Notes 
+ 
+ 
+Item name 
+Priority 
+Eligibility 
+Custom attributes (sketch) 
+What it is 
+PP-EN-Module
+-Update-Q1 
+80 
+Audience: 
+Partner 
+Pulse 
+members 
+newsletterProgram=partner-puls
+e, partnerModule=core, 
+language=en, headline/body, ctaUrl 
+Module news block for Partner 
+Pulse 
+PP-EN-Channe
+l-Spotlight 
+60 
+Rule: 
+channel 
+equals 
+reseller 
+same + channel=reseller 
+Channel-specific spotlight when 
+Pulse alone isn't enough 
+DIST-EN-Marg
+in-Program 
+90 
+Audience: 
+Distributors 
+newsletterProgram=distributors, 
+language=en 
+Highest-priority Distro offer 
+DIST-EN-Trai
+ning-Path 
+50 
+Audience: 
+Distributors 
+same 
+Secondary Distro content 
+TD-EN-API-Re
+lease 
+85 
+Audience: 
+TechDev 
+newsletterProgram=techdev, 
+language=en 
+TechDev product/API drop 
+
+--- PAGE 7 ---
+TD-EN-Sandbo
+x-Invite 
+70 
+Rule: 
+TechDev + 
+recent login 
+same 
+Hands-on invite for engaged 
+TechDev partners 
+FALLBACK-Gen
+eric-Partner 
+— 
+(fallback 
+only) 
+Generic partner thank-you / homepage 
+CTA 
+Used when nothing else qualifies 
+ 
+Why these: covers multi-program overlap (Pulse vs Distro vs TechDev), priority ranking, and a real fallback — the three things the Newsletter use 
+case is meant to prove. 
+
+--- PAGE 8 ---
+Platform Use Case Documentation 
+This section provides the framework for documenting the rationale, features, and implementation details for expanding the use of Adobe Journey 
+Optimizer (AJO) B2C capabilities. [IT Business Use Case Example] 
+ 
+Miro
+ 
+Field 
+Description 
+Use Case Title 
+OpenShift email nurture program rebuild  
+Feature Focus Area 
+References the section in the main document 
+(e.g., Content management - Personalization) 
+Why 
+The OpenShift BU is introducing 3 new stock 
+keeping units (SKUs) designed to align with 
+market changes and bundle products. Our 
+current state nurture framework needs to be 
+rebuilt to align to the new product names and 
+bundling.  
+What 
+Description of the desired functionality and AJO 
+B2C feature(s) being leveraged 
+How 
+Journey per purchase stage 
+●​ Pre-purchase 
+●​ Trials 
+●​ Post-commit  
+Emails with dynamic content/conditional 
+rules/decisioning   
+Dependencies 
+Data 
+
+--- PAGE 9 ---
+Field 
+Description 
+●​ SKUs and customer product numbers 
+updated + ingested in AEP 
+●​ Product trials 
+○​ Forms 
+○​ Offer IDs  
+●​ Red Hat metadata and taxonomy 
+Content 
+●​ Product names 
+●​ Product landing pages 
+●​ Developer product pages 
+●​ Documentation  
+●​ Red Hat Subscription Guide 
+DA Lead 
+ 
+Taliyah McBride
+Priority 
+High 
+Status 
+Draft 
+Corresponding Email Nurture Program 
+This section details how the documented AJO B2C capability will be integrated into the customer journey through a nurture program. 
+ 
+Field 
+Description 
+Lifecycle Stage 
+Discover, Learn, Expand 
+Program Name 
+Pre-purchase OpenShift 
+
+--- PAGE 10 ---
+Field 
+Description 
+Audience 
+Customers (RHEL, AI, AAP) with OpenShift 
+intent 
+Prospects with OpenShift intent 
+Nurture Goal 
+introduce OpenShift as a standalone product for 
+prospects or a complimentary product to their 
+existing product. 
+AJO Feature Used 
+Decisioning and dynamic content  
+Journey Details 
+Brief description of the journey flow 
+Success Metrics 
+Key performance indicators (KPIs) to measure 
+success 
+ 
+Please use this template in the corresponding workflow project, which can be found in 
+.  
+File
+ 
+
+--- PAGE 11 ---
+Practical order of work 
+1.​
+Design the catalog schema (custom attributes you will collect and select on). 
+a.​ Catalog schema: TBD 
+2.​ Create decision items to show to your targeted audience. 
+3.​ Build collections from those attributes. 
+4.​ Add rules and ranking only if audience + priority is not enough. 
+5.​ Wrap in a selection strategy and a decision policy. 
+6.​ Embed the policy in a journey/campaign and map attributes into the template. 
+In Journey Optimizer Decisioning, every offer lives in the built-in Offers catalog. Setup means: extend that catalog’s schema, then create and 
+approve items. 
+ 
+Object model  
+Layer 
+What it is 
+Built 
+Source 
+Catalog schema 
+_experience (standard) + _YourOrg (your 
+custom attributes) 
+Once, extended as needed 
+Digital architecture 
+requirements 
+Decision item 
+One offer: attributes, dates, priority, 
+eligibility, capping 
+Per offer 
+Blueprint 
+Collection 
+Rule over catalog attributes (not a folder) 
+Per grouping you need 
+Blueprint 
+Selection strategy 
+Collection + eligibility + ranking, reusable 
+Per policy need 
+Blueprint 
+Decision policy 
+Runtime ask: how many items, which 
+strategies, fallback 
+Inside the email/journey 
+component 
+Use case / SME 
+ 
+
+--- PAGE 12 ---
+1.1 Decisioning 
+Decisioning in Journey Optimizer is a shared offer engine. You build items once in a catalog, then an email (or other channel) asks a decision policy 
+for the best N items for that profile and renders their attributes in the message. (See structure 1.1) 
+1.2 How a decision is made 
+When a profile hits a journey or campaign that contains a decision policy, the engine does this for that person. (See structure 1.1) 
+ 
+What each layer does: 
+ 
+1.​
+Catalog / items — the inventory of offers (name, dates, priority, custom fields, content). 
+2.​ Collections — dynamic groups of items, based on catalog attributes (for example category = yoga). 
+3.​ Eligibility — who can see an item.  
+a.​ Audience = precomputed membership (can be stale).  
+b.​ Decision rule = evaluated on every decision against current profile/context. 
+4.​ Capping — how often an item can be shown (per profile or globally; by decision event, impression, click, or custom event). 
+5.​ Ranking — which eligible item wins: item priority, a ranking formula, or an AI model. 
+6.​ Decision policy — the runtime container: how many items to return, which selection strategies to run (in sequence), and fallback if nobody 
+qualifies. 
+1.3 Create decision items 
+Decisioning → Catalogs → Create item 
+1.​
+Attributes: name, description, start/end dates, priority (integer; higher wins when ranking is “offer priority”), tags, custom attributes. 
+Optional: Journey Optimizer or AEM content fragments. 
+2.​ Eligibility: default is everyone. Restrict with: 
+a.​ Audiences — profile already in the audience 
+b.​ By rule — evaluated at decision time (use this when you need current profile or context, for example weather) 
+3.​ Capping (optional, up to 10 rules): event type (decision / impression / click / custom), scope (offer-level vs placement), type (in total vs per 
+profile), threshold, reset frequency. 
+4.​ Save as Draft, then Approve. Only approved, in-date items can be delivered. 
+ 
+Example attributes 
+
+--- PAGE 13 ---
+Attribute 
+Type 
+Why 
+category 
+String 
+Lets collections group offers (yoga, 
+credit-card) 
+headline / body 
+Decisioning Content 
+Copy personalized at send time 
+imageUrl 
+Decisioning Asset 
+Public image URL 
+ctaUrl 
+String 
+Landing page / CTA 
+1.4 Create collections 
+Collections are not folders. They are rules over catalog attributes. 
+Catalogs → Collections → Create collection 
+Example: if you added category, a collection named “Yoga offers” with category equals yoga. Preview, then create. 
+Notes: 
+●​ Max 500 items per collection. 
+●​ CONTAINS is IN (exact values), not a wildcard. For “all summer offers”, use a tag, not a name substring. 
+Rules, ranking, selection strategy, policy 
+1.​
+Decision rules (if you need real-time eligibility). 
+2.​ Ranking under Strategy setup: keep offer priority, or add a formula / AI model. 
+3.​ Selection strategy: collection + eligibility + ranking. 
+4.​ In a journey or campaign (code-based, email, SMS, push, direct mail), add a decision policy: number of items to return, strategy sequence, 
+optional fallback. 
+5.​ In the content editor, insert the policy and map item attributes (_experience for standard, _YourOrg for custom). Email also needs a 
+placement. 
+Profiles that receive a decision count toward Engageable Profiles. 
+
+--- PAGE 14 ---
+None‎
+2.1 How it is used in email 
+End-to-end 
+1.​
+Build catalog + items + collection + strategy (and an email placement). 
+2.​ Create an email campaign or a journey Email action. 
+3.​ In Email Designer, turn on Enable decisioning. 
+4.​ Add a decision policy on the component that will show the offer. 
+5.​ Assign a placement (required for email). 
+6.​ Insert policy syntax and map item attributes into the layout. 
+7.​ Preview with a test profile, then publish. 
+Configure the policy in the email 
+1.​
+Name it. Catalog is Offers (only option today). 
+2.​ Set Number of items. 
+3.​ Add a selection strategy (or a single decision item). Order matters: first in the sequence is evaluated first. Group strategies if they should 
+compete. 
+4.​ Optional fallback if nobody qualifies. Fallback ignores dates/eligibility. If you skip it and nothing qualifies, that slot is empty. 
+5.​ Create the policy, then Assign placement. 
+Put offer content into the email 
+1.​
+Open the Personalization editor on that component. 
+2.​ Decision policies → Insert syntax. 
+3.​ Insert attributes: 
+○​ Standard: _experience (name, description, tracking token, etc.) 
+○​ Custom: _YourOrg (headline, image, CTA from your schema) 
+4.​ For email, keep attributes inside the #each loop, in [ ], with a comma before {{/each}}. 
+5.​ Add trackingToken if you want offer tracking: {{item._experience.decisioning.decisionitem.trackingToken}} 
+Example shape (your org node and field names will differ): 
+{{#each decisionPolicy.selections as |item|}} 
+
+--- PAGE 15 ---
+[ 
+  { 
+    "headline": "{{item._luma.headline}}", 
+    "image": "{{item._luma.imageUrl}}", 
+    "cta": "{{item._luma.ctaUrl}}", 
+    "trackingToken": "{{item._experience.decisioning.decisionitem.trackingToken}}" 
+  } 
+] 
+{{/each}} 
+ 
+ 
+ 
+3.1 Is decisioning in AJO B2C similar to Adobe Recommendations? 
+Both pick items from a catalog for a person. Adobe Recommendations (Target) is a behavioral product/content recommender. AJO Decisioning is a 
+governed next-best-offer engine. 
+ 
+The difference is rules vs affinity. 
+ 
+●​ Decisioning: “Gold members can see this 10% offer, once per week, not if they already have the product.” 
+●​ Recommendations: “People who viewed this shoe also viewed these.” 
+ 
+Use Decisioning for which promo/message wins across journeys. Use Recommendations for which products to show from a large catalog. They can 
+run together; they are not substitutes. 
+ 
+ 
+AJO Decisioning 
+Adobe Target Recommendations 
+
+--- PAGE 16 ---
+Typical catalog 
+Tens to thousands of marketing offers 
+(promo, CTA, incentive) 
+Thousands to millions of products or 
+content 
+How it chooses 
+Eligibility rules, collections, priority / 
+formula / AI, capping 
+Algorithms: most viewed, 
+viewed→viewed, bought→bought, 
+recommended for you, cart-based, 
+content similarity 
+Driven by 
+Profile, audiences, business rules, offer 
+constraints 
+On-site behavior (views, cart, 
+purchases) 
+Best at 
+“Which offer is this person allowed to 
+get, and which wins?” 
+“Which products are they likely to want 
+next?” 
+Channels 
+Email, push, SMS, code-based, 
+journeys/campaigns 
+Primarily web/app (can feed other 
+channels with more work) 
+Governance 
+Strong: approve, eligibility, frequency 
+caps, fallback 
+Merchandising filters and exclusions on 
+top of the algorithm 
+ 
+ 
+ 
+ 
+ 
+
+--- PAGE 17 ---
+Resources 
+1.1 Decisioning 
+
+--- PAGE 18 ---
+
+--- PAGE 19 ---
+ 
+3.1 Adobe Recommendations 
+ 
+Adobe Recommendations Capability | Site Personalization at Scale | Digital Experience
+
+--- PAGE 20 ---
+1.1 Overview 
+Journey capping helps you limit the number of journeys a profile can be enrolled in, preventing communication overload. In Journey Optimizer, you 
+can set two types of capping rules: 
+ 
+●​ Entry capping limits the number of journey entries over a given period for a profile. 
+●​ Concurrency capping limits how many journeys a profile can be enrolled in simultaneously. 
+○​ See visual 1.1 
+2.1 Journey capping 
+Two rule types, both live under Business rules, on a rule set with domain Journey: 
+ 
+●​ Entry capping — max journey entries over a period. Example: no more than 5 journeys in a month. Duration is UTC (daily resets at midnight 
+UTC). Upcoming scheduled journeys that use the same rule are counted too, so a high-priority journey later in the month can block a 
+lower-priority one now. 
+●​ Concurrency capping — max journeys a profile can be in at the same time. Example: only 1 journey at once. 
+○​ Concurrency also has Prioritization look ahead (1 / 7 / 30 days). It looks at upcoming scheduled Read audience journeys that share 
+the rule set. If a higher-priority one is coming, the profile is held out of the lower-priority journey so the slot is free. 
+○​ Apply it on the journey: Properties → Capping rules. Activate the rule and the rule set. If you publish immediately, suppression can 
+take up to 10 minutes. 
+3.1 Journey arbitration 
+Arbitration runs only when a cap would be exceeded. Eligible journeys that share the rule set are ranked; the top ones fill the remaining slots; the rest 
+are excluded. 
+●​ Default: priority score (0–100) on the journey properties. Higher wins. 100 effectively guarantees entry. Same score = no reliable tie-break, 
+so keep scores unique. 
+●​ Optional: ranking formula on the rule set (Ranking method = Formula). Score can use journey attributes/tags, profile attributes (for example 
+Gold loyalty), journey priority, or an AI model. Formulas need the Decisioning add-on and are currently Limited Availability. Assigned on the 
+rule set, not per journey. 
+What each does 
+
+--- PAGE 21 ---
+ 
+ 
+Journey capping 
+Journey arbitration 
+Problem 
+A person is in too many journeys 
+They qualify for more journeys than 
+the cap allows 
+Question 
+How many can they enter / be in at 
+once? 
+Which journey(s) get the slots? 
+Configured in 
+Journey-domain rule set 
+Same rule set, using priority (default) 
+or a ranking formula 
+
+--- PAGE 22 ---
+ 
+ 
+ 
+
+--- PAGE 23 ---
+
+--- PAGE 24 ---
+AJO B2C <> Target 
+(Source: Cursor) 
+ 
+Split the jobs: 
+ 1. AJO B2C owns the journey (who enters, waits, gets email/push/in-app, exits). 
+2. Target owns inbound personalization and experiments on web/app. Omnichannel works when both read the same AEP profile and share the 
+same offer/audience story. 
+Division of labor 
+Layer 
+System 
+Role 
+Profile + audiences 
+AEP / RTCDP 
+One identity graph, segments, consent 
+Orchestration 
+AJO B2C 
+Triggers, waits, conditions, 
+email/SMS/push/in-app, exit 
+Inbound PZN / test 
+Adobe Target 
+Site/app hero, banners, XT/A/B 
+Offer arbitration 
+AJO Decisioning 
+Which promo wins (eligibility, priority, 
+capping) 
+Measurement 
+CJA 
+Email + PZN + web in one person 
+journey 
+How they connect 
+1.​ Shared profile — Web/app via Experience Platform Web SDK (or Mobile SDK) into a Target-enabled datastream so page views, PZN 
+impressions, and journey events land on one profile. 
+2.​ Audiences → Target — Activate AEP audiences to the Adobe Target destination (edge for first-page personalization when SDK + edge 
+segmentation are on; otherwise often next-session). 
+3.​ Offers in Target — Build the offer decision in AJO Decisioning, then drop it into a Target manual A/B or Experience Targeting activity 
+(VEC or form-based). Requires Web SDK — not at.js. Align Target and decision start/end dates or visitors get Target default content. 
+
+--- PAGE 25 ---
+HTML‎
+4.​ Journey reacts to inbound — Example from your handbook: “Shown PZN” (Target activity for trial-abandon personalization) as a 
+signal; email/nurture continues in AJO. Treat “can we trigger the journey on seeing a PZN?” as an open contract item until the event is 
+catalogued. 
+5.​ Same story, different channel — Decisioning = which promo; Target Recommendations = next-product catalog. They can run together; 
+they are not substitutes (handbook §2.5.1). 
+Concrete omnichannel pattern (trial abandon) 
+Abandon / audience qualify 
+        │ 
+        ├─► Target XT: on-site "complete trial" hero (offer decision or XT experience) 
+        │ 
+        └─► AJO journey: wait → condition (consent, not started trial) 
+                    → email (GenStudio/AJO) 
+                    → optional in-app 
+                    → exit on "started trial" unitary event 
+ 
+Build order that usually works 
+1.​
+Identity + consent on the profile 
+2.​ Canonical events (abandon, shown PZN, started trial) in AEP — not CJA-only names 
+3.​ Shared offer / messaging theme 
+4.​ Target activity for inbound 
+5.​ AJO journey for outbound + exit 
+6.​ Caps/conflict (AJO rule sets) so Marketo Learn Deep and AJO do not double-message 
+7.​ CJA data views: AJO email/PZN, web, Marketo 
+Guardrails for your stack 
+●​ Prefer unitary events for true real-time exits; audience qualification is ~15–30 min Edge→Hub. 
+●​ Keep journey priority scores unique; concurrency ≤ 2 journeys. 
+●​ AJO and Marketo frequency caps are not aware of each other — use excludes. 
+●​ Empty offer slots = no fallback + no qualified item. 
+●​ Decisioning catalog schema is still TBD for you — design attributes before scaling offers across email + web. 
+ 
+
+--- PAGE 26 ---
+Event trigger types 
+Unitary event — tied to one person. Purchase, cart abandon, login, form submit, loyalty milestone. That profile enters immediately. You can listen for 
+several unitary events in the same journey (start and later steps). 
+Business event — not tied to a person. Product back in stock, price drop, flight cancel, weather alert. It must be the first step. AJO then adds Read 
+audience and enrolls everyone in that audience. Only one business event per journey. Expect 15 minutes to ~1 hour for audience export. 
+Audience qualification — fires when a profile enters or exits an AEP audience (for example they hit Gold tier). No new event stream to implement; 
+you use audience logic instead. Selected on the canvas, not in Events admin. Streaming qualification still has ~15–30 minutes Edge-to-Hub delay. 
+For true real-time, use a unitary event. 
+ 
+ 
+Unitary 
+Business 
+Audience qualification 
+Who 
+One profile 
+Many profiles 
+One profile 
+Trigger 
+That person’s action 
+A global occurrence 
+Audience enter/exit 
+Starts journey 
+Event payload + 
+identity 
+Event + Read audience 
+Membership change 
+How many 
+Several per journey 
+One, at the start 
+First step 
+ 
+How unitary events are identified 
+Incoming data is XDM, usually via Streaming Ingestion / Web or Mobile SDK. 
+●​ Rule-based: no special event ID. A condition on the payload (for example eventType = purchase and cart.value > 50) decides 
+whether this journey listens. Capped around 5,000 qualified events/second per org. 
+●​ System-generated: schema includes the Orchestration eventID field group. The payload must send the ID AJO generated. 
+The payload must include a person identity (ECID, CRM ID, email, etc.) so AJO can stitch the event to a profile. Same event config can be reused by 
+many journeys. 
