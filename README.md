@@ -8,7 +8,7 @@ Digital Architecture **AJO B2C** configuration and team resources.
 |---|---|
 | [`docs/AJO-B2C-Team-Guide.md`](docs/AJO-B2C-Team-Guide.md) | Enablement — how we build in AJO B2C |
 | [`docs/TRACKS.md`](docs/TRACKS.md) | Two tracks: platform expansion vs journey build |
-| [`docs/ops/journey-build-requirements.md`](docs/ops/journey-build-requirements.md) | Promo vs transactional audience / journey settings |
+| [`docs/architecture/journey-build-requirements.md`](docs/architecture/journey-build-requirements.md) | Promo vs transactional audience / journey settings |
 | [`docs/architecture/decisioning-quick-reference.md`](docs/architecture/decisioning-quick-reference.md) | Decisioning — where offer / copy / placement live |
 | [`docs/architecture/decisioning-items-offers-requirements.md`](docs/architecture/decisioning-items-offers-requirements.md) | Decisioning — full requirements, setup, starter offers |
 | [`docs/platform-analysis-parking-lot.md`](docs/platform-analysis-parking-lot.md) | Platform expansion backlog (PA-*) |

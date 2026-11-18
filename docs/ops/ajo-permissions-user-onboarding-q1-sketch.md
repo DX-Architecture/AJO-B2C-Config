@@ -2,8 +2,8 @@
 
 **Status:** Sketch · idea dump — **not** a finished SOP.  
 **Purpose:** Capture tool process, documentation, and best-practice work needed so the right people can use AJO ahead of CY27Q1.  
-**Source:** `[AJO] Permissions and User Onboarding for Q1.pdf` → local binder `AJO B2C Pilot/sources/ajo-permissions-user-onboarding-q1.pdf` (not in this public repo)  
-**Extract:** local binder `AJO B2C Pilot/sources/ajo-permissions-user-onboarding-q1-extract.txt` (not in this public repo)  
+**Source:** `[AJO] Permissions and User Onboarding for Q1.pdf` → binder copy [`../sources/ajo-permissions-user-onboarding-q1.pdf`](../sources/ajo-permissions-user-onboarding-q1.pdf)  
+**Extract:** [`../sources/ajo-permissions-user-onboarding-q1-extract.txt`](../sources/ajo-permissions-user-onboarding-q1-extract.txt)  
 **Parked:** 2026-11-11
 
 ---
@@ -15,7 +15,7 @@
    - **AJO B2C:** Lizzy Ackerman · Taliyah McBride · Tannesia · Amanda Morelli  
    - **AJO B2B:** *(blank in source — fill in)*
 3. **What materials do they need to get started?** (best practices, examples of how to set up a journey)  
-   Evidence crop: `ajo-q1-materials-to-get-started.png` (local binder — not in this public repo) · enablement home: [`../AJO-B2C-Team-Guide.md`](../AJO-B2C-Team-Guide.md) §10  
+   Evidence crop: [`../sources/ajo-q1-materials-to-get-started.png`](../sources/ajo-q1-materials-to-get-started.png) · enablement home: [`../AJO-B2C-Team-Guide.md`](../AJO-B2C-Team-Guide.md) §10  
    - **a.** Proof of cohort participation *(Co-Author)*  
    - **b.** Initial Best Practices *(Co-Author)*  
      - **i.** Marketable  
@@ -40,7 +40,7 @@ Treat each row as a future doc or runbook stub. Link finished artifacts here whe
 | **Cohort / proof of participation** | Gate for who gets sandbox + prod-adjacent access | TBD | sketch |
 | **Best practice: Marketable** | Journey condition: `profile.b2b._redhat.marketable` == true ([fields inventory](../architecture/aep-email-personalization-fields.md)) | Co-author | path verified; BP prose TBD |
 | **Best practice: Bouncebacks** | Suppress / hygiene so Q1 journeys don’t re-mail bad addresses | Co-author | sketch |
-| **Best practice: Journey entry** | Promo vs transactional contract: [`journey-build-requirements.md`](journey-build-requirements.md); promo detail ([promo settings](promotional-read-audience-settings.md); handbook §2.5.2) | Co-author | sketch + Learn Deep reference |
+| **Best practice: Journey entry** | Promo vs transactional contract: [`../architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md); promo detail ([promo settings](../architecture/promotional-read-audience-settings.md); handbook §2.5.2) | Co-author | sketch + Learn Deep reference |
 | **Best practice: Namespace** | Jump + event journeys require coherent namespace (**PA-03**) | Co-author | sketch |
 | **Best practice: Audience selection** | Amanda Machado — who builds vs who requests; streaming vs batch | Amanda Machado | sketch |
 | **AEP fields for email personalization** | What `{{profile…}}` paths exist — living inventory | [`../architecture/aep-email-personalization-fields.md`](../architecture/aep-email-personalization-fields.md) | sketch |
@@ -75,8 +75,8 @@ ops/
 ## Links to related binder work
 
 - Team guide §10 (IT / process): [`../AJO-B2C-Team-Guide.md`](../AJO-B2C-Team-Guide.md)
-- Journey build (entry / namespace examples): [`journey-build-requirements.md`](journey-build-requirements.md)
-- Pilot unitary event reference: [`transactional-unitary-event-settings.md`](transactional-unitary-event-settings.md)
+- Journey build (entry / namespace examples): [`../architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md)
+- Pilot unitary event reference: [`../architecture/transactional-unitary-event-settings.md`](../architecture/transactional-unitary-event-settings.md)
 - Platform / feature backlog: [`../platform-analysis-parking-lot.md`](../platform-analysis-parking-lot.md) (esp. PA-04 entry, PA-08 exit, PA-03 namespace/Jump)
 - Focus Areas: `../Digital Architecture - AJO B2C_Focus Areas.pdf`
 - Decisioning enablement (Partner / OpenShift authors will need catalog permissions): [`../architecture/decisioning-items-offers-requirements.md`](../architecture/decisioning-items-offers-requirements.md)

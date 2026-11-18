@@ -2,7 +2,7 @@
 
 **Status:** Sketch / idea dump for governance — not a finished taxonomy.  
 **Purpose:** Align how we **name audiences** (AEP/RT-CDP) vs **tag journeys & related objects** (AJO Unified Tags) so inventory stays filterable without stuffing metadata into names.  
-**Related:** handbook §2.9 Names, tags, nodes · [`promotional-read-audience-settings.md`](promotional-read-audience-settings.md) · Q1 onboarding BPs · Focus Areas UCs  
+**Related:** handbook §2.9 Names, tags, nodes · [`../architecture/promotional-read-audience-settings.md`](../architecture/promotional-read-audience-settings.md) · Q1 onboarding BPs · Focus Areas UCs  
 
 **Adobe:** [Manage tags in journeys](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/manage-journey/tags) · [Unified Tags overview](https://experienceleague.adobe.com/en/docs/experience-platform/administrative-tags/overview)
 

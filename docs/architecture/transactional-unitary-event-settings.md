@@ -2,7 +2,7 @@
 
 **Track:** 2 — Journey build · parent [`journey-build-requirements.md`](journey-build-requirements.md) · [`../TRACKS.md`](../TRACKS.md)  
 **Status:** Working note — pilot unitary event reference (parity with promo Read Audience note)  
-**Evidence:** `ajo-unitary-event-pilot-transactional.png` (local binder `AJO B2C Pilot/sources/` — not in this public repo) (Events / unitary event definition) · `ajo-unitary-event-fields-eye-icon.png` (local binder `AJO B2C Pilot/sources/` — not in this public repo) (eye control on `Events: Pilot_Unitary`)  
+**Evidence:** `ajo-unitary-event-pilot-transactional.png` (local binder sources — not in this public repo) (Events / unitary event definition) · `ajo-unitary-event-fields-eye-icon.png` (local binder sources — not in this public repo) (eye control on `Events: Pilot_Unitary`)  
 **Ticket:** MARTECHCBP-9868  
 
 ---
@@ -22,7 +22,7 @@
 | Profile identifier | The `sourceKey` of `personKey` |
 | Use supplemental identifier | **Off** |
 
-Also gate sends with **`profile.b2b._redhat.marketable` == true** when required ([fields inventory](../architecture/aep-email-personalization-fields.md)).
+Also gate sends with **`profile.b2b._redhat.marketable` == true** when required ([fields inventory](aep-email-personalization-fields.md)).
 
 ---
 

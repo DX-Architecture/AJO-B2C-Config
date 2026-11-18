@@ -2,8 +2,8 @@
 
 **Track:** 2 — Journey build · parent [`journey-build-requirements.md`](journey-build-requirements.md) · [`../TRACKS.md`](../TRACKS.md)  
 **Status:** Working note for handbook §2.5.2 / Q1 journey-entry BP  
-**Evidence:** `ajo-read-audience-rhel-learn-deep.png` (local binder `AJO B2C Pilot/sources/` — not in this public repo) (Orchestration: Read Audience panel)  
-**Handbook:** Digital Architecture Handbook Ch2 (team Google Doc / local sync; not in this repo) §2.5.2  
+**Evidence:** `ajo-read-audience-rhel-learn-deep.png` (local binder sources — not in this public repo) (Orchestration: Read Audience panel)  
+**Handbook:** `Digital Architecture Handbook Ch2 (not in this repo)` §2.5.2  
 
 ---
 
@@ -20,7 +20,7 @@
 | Journey schedule | **Daily** (via Edit journey schedule) |
 | Incremental read | **Yes** on recurring daily — only net-new audience joiners since last run |
 
-Also gate sends with **`profile.b2b._redhat.marketable` == true** when required ([fields inventory](../architecture/aep-email-personalization-fields.md)).
+Also gate sends with **`profile.b2b._redhat.marketable` == true** when required ([fields inventory](aep-email-personalization-fields.md)).
 
 ---
 

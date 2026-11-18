@@ -8,7 +8,7 @@ Use this when work feels scattered. Everything in the binder maps to **one** of 
 | Track | Job | Home | Not this track |
 |---|---|---|---|
 | **1. Platform expansion** | What to learn / recommend **after** pilot signal — features, Focus Areas bets, parking-lot ideas | [`platform-analysis-parking-lot.md`](platform-analysis-parking-lot.md) | Day-to-day journey build checklists |
-| **2. Journey build requirements** | How to **author** a journey: audience type → entry shape → panel settings for **promotional** vs **transactional** | [`ops/journey-build-requirements.md`](ops/journey-build-requirements.md) | Feature backlog / OpenShift ideation |
+| **2. Journey build requirements** | How to **author** a journey: audience type → entry shape → panel settings for **promotional** vs **transactional** | [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) | Feature backlog / OpenShift ideation |
 
 **Side tracks (keep out of both until merged on purpose)**
 - LocSync / Multilingual → [`architecture/locsync-ajo-multilingual.md`](architecture/locsync-ajo-multilingual.md)
@@ -36,9 +36,9 @@ Use this when work feels scattered. Everything in the binder maps to **one** of 
 
 ## Track 2 — Journey build requirements
 
-**Start:** [`ops/journey-build-requirements.md`](ops/journey-build-requirements.md)  
-**Deep promo settings:** [`ops/promotional-read-audience-settings.md`](ops/promotional-read-audience-settings.md) → handbook §2.5.2  
-**Deep transactional settings:** [`ops/transactional-unitary-event-settings.md`](ops/transactional-unitary-event-settings.md) (pilot unitary / MARTECHCBP-9868)  
+**Start:** [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md)  
+**Deep promo settings:** [`architecture/promotional-read-audience-settings.md`](architecture/promotional-read-audience-settings.md) → handbook §2.5.2  
+**Deep transactional settings:** [`architecture/transactional-unitary-event-settings.md`](architecture/transactional-unitary-event-settings.md) (pilot unitary / MARTECHCBP-9868)  
 **Entry model why:** parking lot **PA-04** (analysis) — build checklist lives in track 2, not the parking lot  
 **Handbook:** Digital Architecture Handbook Ch2 (not in this repo) §2.2 (types) · §2.5.2 (promo Read Audience)
 

@@ -70,7 +70,7 @@ Do **not** choose entry from the email calendar (“we send Tuesdays”) — cho
 | Re-entrance | Explicit policy (promo nurture often restricted; transactional often once-per-event design) |
 | **Exit criteria** | Required for promo/nurture patterns with a conversion/release — see **§4** |
 | Channel business rules | Promo: marketing frequency + quiet hours candidates (**PA-02**). Transactional: **exclude** from quiet-hours / marketing caps unless CX says otherwise |
-| Tags | Milestone name on activity; Unified Tag categories per [`aep-cdp-ajo-b2c-tag-structure-sketch.md`](aep-cdp-ajo-b2c-tag-structure-sketch.md) |
+| Tags | Milestone name on activity; Unified Tag categories per [`../ops/aep-cdp-ajo-b2c-tag-structure-sketch.md`](../ops/aep-cdp-ajo-b2c-tag-structure-sketch.md) |
 
 ### Promotional — Read Audience panel + schedule
 
@@ -181,7 +181,7 @@ Multiple Event/Audience criteria = **OR**, evaluated at every step. Configure in
 - [x] **R&R:** New unitary events (schema / dataset / streaming / event config) are **built by IT** — DA authors request via template; do not treat missing dataset IDs in Journeys payload samples as a DA fill task
 - [x] **Exit criteria** elevated to journey build requirement (§4) — confirm live Abandonment / Learn Deep exits in sandbox
 - [ ] Written rule: which Channel rule sets attach to promo vs transactional email actions
-- [ ] Sync this contract into handbook §2.5.x when stable; then Q1 BP pack ([`ajo-permissions-user-onboarding-q1-sketch.md`](ajo-permissions-user-onboarding-q1-sketch.md))
+- [ ] Sync this contract into handbook §2.5.x when stable; then Q1 BP pack ([`../ops/ajo-permissions-user-onboarding-q1-sketch.md`](../ops/ajo-permissions-user-onboarding-q1-sketch.md))
 
 ---
 

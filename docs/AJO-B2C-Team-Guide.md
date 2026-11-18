@@ -26,7 +26,7 @@ Google Doc paste later is fine; **working SoT for this guide is this markdown fi
 | Track | Job | Start here |
 |---|---|---|
 | **1. Platform expansion** | Features / Focus Areas bets after pilot signal | [`platform-analysis-parking-lot.md`](platform-analysis-parking-lot.md) |
-| **2. Journey build** | Audience type → entry → panel settings | [`ops/journey-build-requirements.md`](ops/journey-build-requirements.md) |
+| **2. Journey build** | Audience type → entry → panel settings | [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) |
 
 Full map: [`TRACKS.md`](TRACKS.md).
 
@@ -51,8 +51,8 @@ Latency reminder: AQ is ~15–30 min Edge→Hub. True real-time needs **unitary*
 
 ## 4. Build: promotional vs transactional
 
-Author checklist SoT: [`ops/journey-build-requirements.md`](ops/journey-build-requirements.md).  
-Promo Read Audience panel detail: [`ops/promotional-read-audience-settings.md`](ops/promotional-read-audience-settings.md) · handbook **§2.5.2**.
+Author checklist SoT: [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md).  
+Promo Read Audience panel detail: [`architecture/promotional-read-audience-settings.md`](architecture/promotional-read-audience-settings.md) · handbook **§2.5.2**.
 
 | Comm class | Default entry | Namespace (Persons promo ref) | Schedule |
 |---|---|---|---|
@@ -81,7 +81,7 @@ See [`project-brief.md`](project-brief.md).
 ### Product Trial Start (transactional)
 
 - Welcome / Expiring Soon / Survey on **unitary** entry.  
-- Pilot event reference: **rule-based** unitary on schema **B2B Activity v.1**, namespace **`b2b_person`**, profile id `personKey.sourceKey`, condition on `campaignInteraction_c.offerID` — [`ops/transactional-unitary-event-settings.md`](ops/transactional-unitary-event-settings.md).  
+- Pilot event reference: **rule-based** unitary on schema **B2B Activity v.1**, namespace **`b2b_person`**, profile id `personKey.sourceKey`, condition on `campaignInteraction_c.offerID` — [`architecture/transactional-unitary-event-settings.md`](architecture/transactional-unitary-event-settings.md).  
 - Do **not** Jump from a Read Audience nurture shell into Trial Start as the primary design.  
 - Keep marketing quiet hours / freq caps **off** transactional actions unless CX explicitly wants them.
 
@@ -92,7 +92,7 @@ See [`project-brief.md`](project-brief.md).
 | Topic | Practice |
 |---|---|
 | Promo Persons path | Namespace **B2B Person (`b2b_person`)** — Learn Deep reference |
-| Transactional unitary (pilot) | Same **`b2b_person`** · id = `personKey.sourceKey` · rule-based offerID condition — [txn settings](ops/transactional-unitary-event-settings.md) |
+| Transactional unitary (pilot) | Same **`b2b_person`** · id = `personKey.sourceKey` · rule-based offerID condition — [txn settings](architecture/transactional-unitary-event-settings.md) |
 | Event journeys | Payload must carry a person identity AJO can stitch; same namespace family as the journey |
 | Marketable | Verified path: `profile.b2b._redhat.marketable` |
 | Fields inventory | [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md) |
@@ -102,7 +102,7 @@ See [`project-brief.md`](project-brief.md).
 
 ## 7. Exit criteria + Jump (short)
 
-**Exit criteria is a journey build requirement** for promo/nurture with a release KPI — full contract: [`ops/journey-build-requirements.md`](ops/journey-build-requirements.md) **§4**.
+**Exit criteria is a journey build requirement** for promo/nurture with a release KPI — full contract: [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) **§4**.
 
 | Topic | Rule of thumb | Depth |
 |---|---|---|
@@ -144,10 +144,10 @@ Materials authors need to get started (best practices, journey setup examples). 
    - **b.** Initial Best Practices *(Co-Author)*  
      - **i.** Marketable — `profile.b2b._redhat.marketable` ([fields inventory](architecture/aep-email-personalization-fields.md))  
      - **ii.** Bouncebacks  
-     - **iii.** Journey entry guidance — promo vs transactional ([`ops/journey-build-requirements.md`](ops/journey-build-requirements.md))  
+     - **iii.** Journey entry guidance — promo vs transactional ([`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md))  
      - **iv.** Namespace guidance — Persons / unitary path `b2b_person`  
      - **v.** Audience selection *[Amanda Machado]*  
-     - **vi.** Where / how to request a unitary event (including template) — **IT builds** new unitary events (schema / dataset / streaming / config); DA requests + uses. Pilot reference: [`ops/transactional-unitary-event-settings.md`](ops/transactional-unitary-event-settings.md)  
+     - **vi.** Where / how to request a unitary event (including template) — **IT builds** new unitary events (schema / dataset / streaming / config); DA requests + uses. Pilot reference: [`architecture/transactional-unitary-event-settings.md`](architecture/transactional-unitary-event-settings.md)  
      - **vii.** How to request support  
    - **c.** Troubleshooting documentation for MarTech  
 
@@ -159,9 +159,9 @@ Until those BP pages exist, use this guide + handbook Ch2 + the two reference co
 
 | Need | Doc |
 |---|---|
-| Promo Read Audience settings | [`ops/promotional-read-audience-settings.md`](ops/promotional-read-audience-settings.md) |
-| Transactional unitary settings | [`ops/transactional-unitary-event-settings.md`](ops/transactional-unitary-event-settings.md) |
-| Full promo vs txn build contract | [`ops/journey-build-requirements.md`](ops/journey-build-requirements.md) |
+| Promo Read Audience settings | [`architecture/promotional-read-audience-settings.md`](architecture/promotional-read-audience-settings.md) |
+| Transactional unitary settings | [`architecture/transactional-unitary-event-settings.md`](architecture/transactional-unitary-event-settings.md) |
+| Full promo vs txn build contract | [`architecture/journey-build-requirements.md`](architecture/journey-build-requirements.md) |
 | Tags / CDP naming | [`ops/aep-cdp-ajo-b2c-tag-structure-sketch.md`](ops/aep-cdp-ajo-b2c-tag-structure-sketch.md) |
 | Personalization field paths | [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md) |
 | Q1 permissions / IT & process sketch | [`ops/ajo-permissions-user-onboarding-q1-sketch.md`](ops/ajo-permissions-user-onboarding-q1-sketch.md) |
@@ -195,8 +195,8 @@ Destination tag values in play: Marketo · Target · AJO-B2C · AJO-B2B · CJA.
 
 1. Read handbook Ch2 §2.2 + §2.5.2 (contracts).  
 2. Skim this guide §§3–6 and §10 (IT / process materials).  
-3. Open Learn Deep promo reference: [`ops/promotional-read-audience-settings.md`](ops/promotional-read-audience-settings.md).  
-4. Open pilot unitary transactional reference: [`ops/transactional-unitary-event-settings.md`](ops/transactional-unitary-event-settings.md).  
+3. Open Learn Deep promo reference: [`architecture/promotional-read-audience-settings.md`](architecture/promotional-read-audience-settings.md).  
+4. Open pilot unitary transactional reference: [`architecture/transactional-unitary-event-settings.md`](architecture/transactional-unitary-event-settings.md).  
 5. Before publish: namespace · marketable · exit · Channel rule set (promo vs txn).
 
 ---
