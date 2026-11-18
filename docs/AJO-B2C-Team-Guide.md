@@ -4,7 +4,7 @@
 **Role:** Enablement / how we work day to day.  
 **Not this doc:** Stack-wide load-bearing contracts live in the **team handbook** Chapter 2 (Digital Architecture Handbook Ch2 (not in this repo)). When this guide and the handbook disagree on a contract, **handbook wins** until you deliberately refresh Ch2.
 
-**Binder index:** [`TRACKS.md`](TRACKS.md) · Pilot narrative: [`project-brief.md`](project-brief.md)
+**Binder index:** [`TRACKS.md`](TRACKS.md) · Pilot narrative: [`RHEL-Trial-Experience.md`](RHEL-Trial-Experience.md)
 
 ---
 
@@ -69,7 +69,7 @@ Promo Read Audience panel detail: [`architecture/promotional-read-audience-setti
 
 ## 5. Golden paths (pilot)
 
-See [`project-brief.md`](project-brief.md).
+See [`RHEL-Trial-Experience.md`](RHEL-Trial-Experience.md).
 
 ### Product Trial Abandonment (nurture / promo-shaped)
 

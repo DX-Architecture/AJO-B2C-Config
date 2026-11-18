@@ -10,7 +10,7 @@
 - Two-track home: [`../TRACKS.md`](../TRACKS.md)
 - Journey **build** settings (promo vs transactional) — track 2, not here: [`architecture/journey-build-requirements.md`](../architecture/journey-build-requirements.md)
 - Focus Areas source (current): `Digital Architecture - AJO B2C_Focus Areas.pdf` · extract `../sources/ajo-b2c-focus-areas-extract.txt` (refreshed 2026-11-11 from Downloads)
-- Pilot brief / what’s next: [`project-brief.md`](../project-brief.md)
+- Pilot brief / what’s next: [`RHEL-Trial-Experience.md`](../RHEL-Trial-Experience.md)
 - Decisioning deep dive (side track): [`architecture/decisioning-items-offers-requirements.md`](../architecture/decisioning-items-offers-requirements.md)
 - LocSync / Multilingual (side track): [`architecture/locsync-ajo-multilingual.md`](../architecture/locsync-ajo-multilingual.md)
 - Q4 team track: `../../Professional/q4-focus-areas.md` → AJO B2C platform track

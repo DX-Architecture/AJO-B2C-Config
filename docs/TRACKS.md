@@ -13,7 +13,7 @@ Use this when work feels scattered. Everything in the binder maps to **one** of 
 **Side tracks (keep out of both until merged on purpose)**
 - LocSync / Multilingual → [`architecture/locsync-ajo-multilingual.md`](architecture/locsync-ajo-multilingual.md)
 - Decisioning → [`architecture/decisioning-quick-reference.md`](architecture/decisioning-quick-reference.md) (offer / copy / placement) · depth [`architecture/decisioning-items-offers-requirements.md`](architecture/decisioning-items-offers-requirements.md)
-- Pilot narrative / scorecard → [`project-brief.md`](project-brief.md)
+- Pilot narrative / scorecard → [`RHEL-Trial-Experience.md`](RHEL-Trial-Experience.md)
 
 **Canvas (track 2 at a glance):** `ajo-b2c-journey-build-requirements.canvas.tsx` (open beside chat)
 

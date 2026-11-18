@@ -5,10 +5,10 @@
 **Status:** Working contract — consolidate promo + transactional build rules here; park feature ideas in the parking lot.
 
 **Evidence / SoT**
-- Promo Read Audience panel: [`promotional-read-audience-settings.md`](promotional-read-audience-settings.md) · screenshot `ajo-read-audience-rhel-learn-deep.png` (local binder sources — not in this public repo)
-- Transactional unitary event: [`transactional-unitary-event-settings.md`](transactional-unitary-event-settings.md) · screenshot `ajo-unitary-event-pilot-transactional.png` (local binder sources — not in this public repo)
-- Handbook: `Digital Architecture Handbook Ch2 (not in this repo)` §2.2 (journey types) · §2.5.2 (promo contract)
-- Pilot shapes: [`../project-brief.md`](../project-brief.md) (Abandonment nurture + Trial Start transactional)
+- Promo Read Audience panel: [`promotional-read-audience-settings.md`](promotional-read-audience-settings.md) · screenshot `../sources/ajo-read-audience-rhel-learn-deep.png`
+- Transactional unitary event: [`transactional-unitary-event-settings.md`](transactional-unitary-event-settings.md) · screenshot `../sources/ajo-unitary-event-pilot-transactional.png`
+- Handbook: `../../handbook/source.txt` §2.2 (journey types) · §2.5.2 (promo contract)
+- Pilot shapes: [`../RHEL-Trial-Experience.md`](../RHEL-Trial-Experience.md) (Abandonment nurture + Trial Start transactional)
 - Entry analysis (why Read Audience ≠ Jump): parking lot **PA-04**
 - Exit / release (depth also in parking lot **PA-08**): see **§4** below
 

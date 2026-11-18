@@ -1,13 +1,13 @@
 # AJO B2C Decisioning — Requirements for Decision Items & Offers
 
-Deep-dive reference for the Q4 focus area **"Decision capabilities — discovery of feature + build rules"** and the CY27 goal **"Use case development for decisioning"** (see `../project-brief.md` §6).
+Deep-dive reference for the Q4 focus area **"Decision capabilities — discovery of feature + build rules"** and the CY27 goal **"Use case development for decisioning"** (see `../RHEL-Trial-Experience.md` §6).
 
 **Status:** Reference + draft schema proposal + starter offer catalog. Nothing here is live — the RHEL pilot does not use Decisioning today. Prep for Q4 discovery and two scoped use cases (Partner Personalized Newsletter, Event Modernization).
 
 **Team Guide quick start:** [`decisioning-quick-reference.md`](decisioning-quick-reference.md) — where the offer, email copy, and placement live.
 
 **Sources:**
-- Digital Architecture AJO B2C Focus Areas deck (pp. 6–12, 20) — practical order of work, decision item/offer mechanics, Partner Newsletter use case (PDF in local binder; not committed to this public repo)
+- `../Digital Architecture - AJO B2C_Focus Areas.pdf` (pp. 6–12, 20) — practical order of work, decision item/offer mechanics, Partner Newsletter use case
 - Adobe Experience League (Decisioning / Experience Decisioning docs)
 
 ---
@@ -309,9 +309,9 @@ That proves the full chain (§5.1) without waiting on IT for a production schema
 
 ### 6.1 RHEL pilot (live, Oct 14 2026) — no Decisioning today
 
-Current experiences (`../project-brief.md` §2) use GenStudio-authored copy, not catalog-driven offers:
+Current experiences (`../RHEL-Trial-Experience.md` §2) use GenStudio-authored copy, not catalog-driven offers:
 
-- **Product Trial Abandonment** — "late-stage offer that primes return to trial" is still open copy, not a decision item (open item in `../project-brief.md` §7; optional catalog items in §5.4).
+- **Product Trial Abandonment** — "late-stage offer that primes return to trial" is still open copy, not a decision item (open item in `../RHEL-Trial-Experience.md` §7; optional catalog items in §5.4).
 - The on-site **trial offer** referenced alongside AJO email is served by **Adobe Target**, not AJO Decisioning (two different engines — see §6 below).
 
 So there is no existing catalog schema to inherit from. Any decisioning build starts from zero attributes.
@@ -367,7 +367,7 @@ From `../WIP_CY27 Event Modernization_GH.pdf`. Second scoped candidate use case,
 | Consistent, accurate **event-level data** at **tier 1 / tier 2 / tier 3** granularity, for actual-scale events (KubeCon, MWC) | Decisioning eligibility and the `eventTier`/`eventTrack` attributes below are only as good as this data |
 | Associate time/space to prioritize this build, if it's where the business needs to pivot | Organizational — not a platform gap |
 
-> **This is gated by the Q4 "Activities / events — event catalog" focus area** (`../project-brief.md` §6). That event catalog *is* the tier 1/2/3 data source this use case needs. Treat Event Modernization as CY27-after-Q4-catalog, not parallel work.
+> **This is gated by the Q4 "Activities / events — event catalog" focus area** (`../RHEL-Trial-Experience.md` §6). That event catalog *is* the tier 1/2/3 data source this use case needs. Treat Event Modernization as CY27-after-Q4-catalog, not parallel work.
 
 **Pattern (matches the object model in §1–4 above):**
 
