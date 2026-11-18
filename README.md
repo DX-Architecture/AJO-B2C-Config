@@ -10,6 +10,7 @@ Digital Architecture **AJO B2C** configuration and team resources.
 | [`docs/TRACKS.md`](docs/TRACKS.md) | Two tracks: platform expansion vs journey build |
 | [`docs/ops/journey-build-requirements.md`](docs/ops/journey-build-requirements.md) | Promo vs transactional audience / journey settings |
 | [`docs/platform-analysis-parking-lot.md`](docs/platform-analysis-parking-lot.md) | Platform expansion backlog (PA-*) |
+| [`nurture-framework/`](nurture-framework/) | Omnichannel Nurture Framework × AJO B2C (Marketo vs AJO architecture) |
 
 Dense stack contracts remain in the **Digital Architecture Handbook** Chapter 2 (Google Doc). This repo is enablement + build/config guidance for AJO B2C authors.
 
