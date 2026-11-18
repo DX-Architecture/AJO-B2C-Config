@@ -30,7 +30,7 @@ Google Doc paste later is fine; **working SoT for this guide is this markdown fi
 
 Full map: [`TRACKS.md`](TRACKS.md).
 
-**Side tracks (optional later):** Decisioning depth · LocSync / Multilingual — not required to ship a first promo or transactional journey.
+**Side tracks (optional later):** Decisioning ([quick ref](architecture/decisioning-quick-reference.md)) · LocSync / Multilingual — not required to ship a first promo or transactional journey.
 
 ---
 
@@ -165,6 +165,8 @@ Until those BP pages exist, use this guide + handbook Ch2 + the two reference co
 | Tags / CDP naming | [`ops/aep-cdp-ajo-b2c-tag-structure-sketch.md`](ops/aep-cdp-ajo-b2c-tag-structure-sketch.md) |
 | Personalization field paths | [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md) |
 | Q1 permissions / IT & process sketch | [`ops/ajo-permissions-user-onboarding-q1-sketch.md`](ops/ajo-permissions-user-onboarding-q1-sketch.md) |
+| **Decisioning — where offer / copy / placement live** | [`architecture/decisioning-quick-reference.md`](architecture/decisioning-quick-reference.md) |
+| Decisioning — full requirements (items, setup, placements, use cases) | [`architecture/decisioning-items-offers-requirements.md`](architecture/decisioning-items-offers-requirements.md) |
 
 Destination tag values in play: Marketo · Target · AJO-B2C · AJO-B2B · CJA.
 
@@ -174,7 +176,7 @@ Destination tag values in play: Marketo · Target · AJO-B2C · AJO-B2B · CJA.
 
 | Track | When to open |
 |---|---|
-| Decisioning (items / offers / Partner newsletter) | [`architecture/decisioning-items-offers-requirements.md`](architecture/decisioning-items-offers-requirements.md) |
+| Decisioning (items / offers / Partner newsletter / Event Modernization) | Start [`architecture/decisioning-quick-reference.md`](architecture/decisioning-quick-reference.md) · depth [`architecture/decisioning-items-offers-requirements.md`](architecture/decisioning-items-offers-requirements.md) — not required for a first promo/txn journey |
 | LocSync / Multilingual | [`architecture/locsync-ajo-multilingual.md`](architecture/locsync-ajo-multilingual.md) — separate from platform expansion parking lot |
 | OpenShift pre-purchase / SKUs | Parking lot **PA-06** |
 
@@ -200,4 +202,4 @@ Destination tag values in play: Marketo · Target · AJO-B2C · AJO-B2B · CJA.
 ---
 
 **Created:** 2026-11-18  
-**Last updated:** 2026-11-18 — §10 IT / process materials checklist
+**Last updated:** 2026-11-18 — §11 Decisioning quick reference + full requirements as Team Guide resources

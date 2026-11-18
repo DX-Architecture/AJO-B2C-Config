@@ -4,9 +4,11 @@ Deep-dive reference for the Q4 focus area **"Decision capabilities — discovery
 
 **Status:** Reference + draft schema proposal + starter offer catalog. Nothing here is live — the RHEL pilot does not use Decisioning today. Prep for Q4 discovery and two scoped use cases (Partner Personalized Newsletter, Event Modernization).
 
+**Team Guide quick start:** [`decisioning-quick-reference.md`](decisioning-quick-reference.md) — where the offer, email copy, and placement live.
+
 **Sources:**
-- `../Digital Architecture - AJO B2C_Focus Areas.pdf` (pp. 6–12, 20) — practical order of work, decision item/offer mechanics, Partner Newsletter use case
-- Adobe Experience League (Decisioning / Experience Decisioning docs), pulled in the [AJO B2C Decisioning](66deacc9-1c85-42e9-87f5-4832e3397c53) chat (Sep 14–15, 2026)
+- Digital Architecture AJO B2C Focus Areas deck (pp. 6–12, 20) — practical order of work, decision item/offer mechanics, Partner Newsletter use case (PDF in local binder; not committed to this public repo)
+- Adobe Experience League (Decisioning / Experience Decisioning docs)
 
 ---
 
