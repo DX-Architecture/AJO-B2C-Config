@@ -2,7 +2,8 @@
 
 Use this when work feels scattered. Everything in the binder maps to **one** of these (or an explicit side track).
 
-**Human start (enablement):** [`AJO-B2C-Team-Guide.md`](AJO-B2C-Team-Guide.md) — how we work in AJO B2C (incl. §10 IT / process materials). Dense stack contracts stay in handbook Chapter 2.
+**Human start (enablement):** [`AJO-B2C-Team-Guide.md`](AJO-B2C-Team-Guide.md) — how we work in AJO B2C (incl. §10 IT / process materials). Dense stack contracts stay in handbook Chapter 2.  
+**Team git:** [DX-Architecture/AJO-B2C-Config](https://github.com/DX-Architecture/AJO-B2C-Config) `docs/` (markdown share SoT; keep aligned with this binder).
 
 | Track | Job | Home | Not this track |
 |---|---|---|---|
@@ -39,7 +40,7 @@ Use this when work feels scattered. Everything in the binder maps to **one** of 
 **Deep promo settings:** [`ops/promotional-read-audience-settings.md`](ops/promotional-read-audience-settings.md) → handbook §2.5.2  
 **Deep transactional settings:** [`ops/transactional-unitary-event-settings.md`](ops/transactional-unitary-event-settings.md) (pilot unitary / MARTECHCBP-9868)  
 **Entry model why:** parking lot **PA-04** (analysis) — build checklist lives in track 2, not the parking lot  
-**Handbook:** Digital Architecture Handbook Ch2 (team Google Doc / local sync; not in this repo) §2.2 (types) · §2.5.2 (promo Read Audience)
+**Handbook:** Digital Architecture Handbook Ch2 (not in this repo) §2.2 (types) · §2.5.2 (promo Read Audience)
 
 | Comm class | Typical RH example | Entry |
 |---|---|---|
