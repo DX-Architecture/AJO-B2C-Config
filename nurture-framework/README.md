@@ -4,19 +4,6 @@ How the **CY26 Omnichannel Nurture Framework** (stages, Experience Patterns, Net
 
 **Rule:** Keep the framework as the operating model. Use AJO B2C to elevate *how* patterns run (entry, exit, real-time, decisioning, arbitration) — do not rebuild Discover→Expand as Marketo clones inside AJO.
 
-## Binder sources (this folder)
-
-| File | What it is |
-|---|---|
-| [`sources/CY26 _ Omnichannel Nurture Framework + Experience Patterns.pdf`](sources/CY26%20_%20Omnichannel%20Nurture%20Framework%20+%20Experience%20Patterns.pdf) | Framework + Experience Patterns (Updated Q3 CY26) |
-| [`sources/CY27 Red Hat Marketing Planning Guidance - Presentation Version.pdf`](sources/CY27%20Red%20Hat%20Marketing%20Planning%20Guidance%20-%20Presentation%20Version.pdf) | CY27 planning (Experience Orchestration, PAI, GTM) |
-| [`sources/cy26-omnichannel-nurture-framework.png`](sources/cy26-omnichannel-nurture-framework.png) | Stage × pattern overview |
-| [`sources/cy25-nets-ladders-catapults.png`](sources/cy25-nets-ladders-catapults.png) | Nets / Ladders / Catapults |
-| [`sources/cy25-experience-pattern-criteria.png`](sources/cy25-experience-pattern-criteria.png) | Pattern criteria (catch / release / content mix) |
-| [`sources/cy26-ansible-experience-map.png`](sources/cy26-ansible-experience-map.png) | Example product experience map (email + web PZN) |
-
-Related pilot decks and extracts (Focus Areas, Event Modernization, RHEL pilot brief) live in [`../sources/`](../sources/).
-
 ## Start here
 
 | Topic | Notes |

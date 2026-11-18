@@ -14,12 +14,12 @@ Binary and extract binder for the RHEL AJO B2C pilot and platform expansion work
 
 ## Nurture framework visuals
 
-Also mirrored under [`../nurture-framework/sources/`](../nurture-framework/sources/) with the CY26/CY27 PDFs:
-
 - `cy26-omnichannel-nurture-framework.png`
 - `cy25-nets-ladders-catapults.png`
 - `cy25-experience-pattern-criteria.png`
 - `cy26-ansible-experience-map.png`
+
+CY26/CY27 framework PDFs stay in the local Cursor binder `Nurture Framework/` (not in this repo). Architecture guides: [`../nurture-framework/`](../nurture-framework/).
 
 ## Data / identity / personalization
 

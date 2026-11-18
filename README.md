@@ -31,4 +31,4 @@ Dense stack contracts remain in the **Digital Architecture Handbook** Chapter 2 
 
 ## Local mirror
 
-Authoring may still happen in the Cursor binder `AJO B2C Pilot/` or `Nurture Framework/`. After edits, sync markdown into `docs/` and binaries into `sources/` / `nurture-framework/sources/` before push.
+Authoring may still happen in the Cursor binder `AJO B2C Pilot/` or `Nurture Framework/`. After edits, sync markdown into `docs/` / `nurture-framework/` and pilot binaries into `sources/` before push.

@@ -1,7 +1,7 @@
 # Experience Pattern migration order
 
 **Purpose:** Which Omnichannel Nurture Framework patterns move to AJO B2C first — and what stays in Marketo.  
-**Related:** [`marketo-vs-ajo-architecture.md`](marketo-vs-ajo-architecture.md) · [`nets-ladders-catapults-ajo.md`](nets-ladders-catapults-ajo.md) · [`sources/cy26-omnichannel-nurture-framework.png`](sources/cy26-omnichannel-nurture-framework.png)
+**Related:** [`marketo-vs-ajo-architecture.md`](marketo-vs-ajo-architecture.md) · [`nets-ladders-catapults-ajo.md`](nets-ladders-catapults-ajo.md) · [`../sources/cy26-omnichannel-nurture-framework.png`](../sources/cy26-omnichannel-nurture-framework.png)
 
 ---
 

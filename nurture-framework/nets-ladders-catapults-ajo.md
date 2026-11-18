@@ -1,7 +1,7 @@
 # Nets / Ladders / Catapults → AJO journey types
 
 **Purpose:** Map Omnichannel Nurture Framework pillars to AJO B2C entry models and build patterns.  
-**Sources:** [`sources/cy25-nets-ladders-catapults.png`](sources/cy25-nets-ladders-catapults.png) · [`sources/cy25-experience-pattern-criteria.png`](sources/cy25-experience-pattern-criteria.png) · [`../docs/architecture/journey-build-requirements.md`](../docs/architecture/journey-build-requirements.md)
+**Sources:** [`../sources/cy25-nets-ladders-catapults.png`](../sources/cy25-nets-ladders-catapults.png) · [`../sources/cy25-experience-pattern-criteria.png`](../sources/cy25-experience-pattern-criteria.png) · [`../docs/architecture/journey-build-requirements.md`](../docs/architecture/journey-build-requirements.md)
 
 ---
 
