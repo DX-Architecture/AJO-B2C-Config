@@ -37,7 +37,7 @@
 | PA-04 | Journey entry model for scheduled email nurture (vs Jump) | Activities / events · Orchestration patterns | `explore` | Classic nurture = marketable + day/time + AEP membership → Read Audience; that path cannot use Jump — need a split model for relevance + lifecycle | See card; [Journey types](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/journey-types-selection) |
 | PA-05 | AJO personalization (editor, profile data, playground, inline edit) | Content management · Dynamic content | `idea` | Bookmark for next build — profile tokens, Handlebars, playground practice before OpenShift SKU content | [Get started with personalization](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/content-management/personalization/personalize) |
 | PA-06 | OpenShift Pre-purchase new build (CY27 SKUs / TM ideas) | Content mgmt · Decisioning · Experience Patterns | `idea` | New SKU map + modular email sections + Discover→Learn→Expand pre-purchase; personalization + decisioning opportunity | Source: `sources/tm-ideas-new-openshift-skus.pdf` |
-| PA-08 | Journey **Exit criteria** (Event / Audience / Profile attribute) | Activities / orchestration · Experience Pattern “release” | `idea` | Framework conversion/release KPI → stop nurture when purpose is met (e.g. trial started); pairs with PA-03/04 handoffs | [Journey properties — Exit criteria](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/create-journey/journey-properties) |
+| PA-08 | Journey **Exit criteria** (Event / Audience / Profile attribute) | Activities / orchestration · Experience Pattern “release” | `recommend` | **Also a track-2 build requirement** — stop nurture when purpose is met; pairs with PA-03/04 | Build: [`ops/journey-build-requirements.md`](ops/journey-build-requirements.md) §4 · [Adobe Exit criteria](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/create-journey/journey-properties) |
 | OPS-01 | Q1 permissions + user onboarding + best-practices pack | Tool process / docs / enablement | `idea` | Who gets AJO access for Q1 UCs; co-authored BPs (marketable, entry, namespace, unitary events, support) | [`ops/ajo-permissions-user-onboarding-q1-sketch.md`](ops/ajo-permissions-user-onboarding-q1-sketch.md) |
 | OPS-02 | AEP schemas / fields for email personalization inventory | Content / data · Personalization | `idea` | Living list of verified `{{profile…}}` paths + known needs (marketable, persona, product…) | [`architecture/aep-email-personalization-fields.md`](architecture/aep-email-personalization-fields.md) |
 | OPS-03 | Tag structure AEP/CDP/AJO B2C | Tool process / governance | `idea` | CDP audience naming vs AJO Unified Tag categories (milestone names, filterable metadata) | [`ops/aep-cdp-ajo-b2c-tag-structure-sketch.md`](ops/aep-cdp-ajo-b2c-tag-structure-sketch.md) |
@@ -402,6 +402,8 @@ Prefer:
 ---
 
 ### PA-08 — Journey Exit criteria (Event / Audience / Profile attribute)
+
+**Status:** `recommend` — author contract lives in track 2 [`ops/journey-build-requirements.md`](ops/journey-build-requirements.md) **§4**. This card keeps expansion / pattern examples.
 
 **Why:** Direct OOTB match to Experience Pattern **release** (conversion / “stop messaging when purpose is met”). Complements entry model (**PA-04**) and avoids over-relying on Jump (**PA-03**) for handoffs.
 

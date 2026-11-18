@@ -2,7 +2,7 @@
 
 **Audience:** Digital Architecture teammates new(er) to AJO B2C (journey authors, Q1 cohort).  
 **Role:** Enablement / how we work day to day.  
-**Not this doc:** Stack-wide load-bearing contracts live in the **team handbook** Chapter 2 (Digital Architecture Handbook Ch2 — team Google Doc / local sync; not in this repo). When this guide and the handbook disagree on a contract, **handbook wins** until you deliberately refresh Ch2.
+**Not this doc:** Stack-wide load-bearing contracts live in the **team handbook** Chapter 2 (Digital Architecture Handbook Ch2 (not in this repo)). When this guide and the handbook disagree on a contract, **handbook wins** until you deliberately refresh Ch2.
 
 **Binder index:** [`TRACKS.md`](TRACKS.md) · Pilot narrative: [`project-brief.md`](project-brief.md)
 
@@ -102,9 +102,11 @@ See [`project-brief.md`](project-brief.md).
 
 ## 7. Exit criteria + Jump (short)
 
+**Exit criteria is a journey build requirement** for promo/nurture with a release KPI — full contract: [`ops/journey-build-requirements.md`](ops/journey-build-requirements.md) **§4**.
+
 | Topic | Rule of thumb | Depth |
 |---|---|---|
-| **Exit criteria** | Promo/nurture: stop when purpose is met (e.g. trial started) | Parking lot **PA-08** |
+| **Exit criteria** | Promo/nurture: **required** stop when purpose is met (Event / Audience / Profile attribute) | Build §4 · parking lot **PA-08** |
 | **Jump** | Fork (can stay active in A+B) — not a clean handoff | **PA-03** |
 | **Scheduled nurture → Trial Start** | Exit A + unitary entry to B — do not Jump from Read Audience | **PA-04** |
 

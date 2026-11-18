@@ -5,11 +5,12 @@
 **Status:** Working contract — consolidate promo + transactional build rules here; park feature ideas in the parking lot.
 
 **Evidence / SoT**
-- Promo Read Audience panel: [`promotional-read-audience-settings.md`](promotional-read-audience-settings.md) · screenshot `ajo-read-audience-rhel-learn-deep.png` (local binder `AJO B2C Pilot/sources/` — not in this public repo)
-- Transactional unitary event: [`transactional-unitary-event-settings.md`](transactional-unitary-event-settings.md) · screenshot `ajo-unitary-event-pilot-transactional.png` (local binder `AJO B2C Pilot/sources/` — not in this public repo)
-- Handbook: Digital Architecture Handbook Ch2 (team Google Doc / local sync; not in this repo) §2.2 (journey types) · §2.5.2 (promo contract)
+- Promo Read Audience panel: [`promotional-read-audience-settings.md`](promotional-read-audience-settings.md) · screenshot `ajo-read-audience-rhel-learn-deep.png` (local binder sources — not in this public repo)
+- Transactional unitary event: [`transactional-unitary-event-settings.md`](transactional-unitary-event-settings.md) · screenshot `ajo-unitary-event-pilot-transactional.png` (local binder sources — not in this public repo)
+- Handbook: `Digital Architecture Handbook Ch2 (not in this repo)` §2.2 (journey types) · §2.5.2 (promo contract)
 - Pilot shapes: [`../project-brief.md`](../project-brief.md) (Abandonment nurture + Trial Start transactional)
 - Entry analysis (why Read Audience ≠ Jump): parking lot **PA-04**
+- Exit / release (depth also in parking lot **PA-08**): see **§4** below
 
 ---
 
@@ -67,7 +68,7 @@ Do **not** choose entry from the email calendar (“we send Tuesdays”) — cho
 |---|---|
 | Journey timezone | RH standard (journey TZ drives weekday/quiet evaluation) |
 | Re-entrance | Explicit policy (promo nurture often restricted; transactional often once-per-event design) |
-| Exit criteria | Promo: release on conversion (e.g. trial started) — **PA-08**. Transactional: usually natural end after sequence |
+| **Exit criteria** | Required for promo/nurture patterns with a conversion/release — see **§4** |
 | Channel business rules | Promo: marketing frequency + quiet hours candidates (**PA-02**). Transactional: **exclude** from quiet-hours / marketing caps unless CX says otherwise |
 | Tags | Milestone name on activity; Unified Tag categories per [`aep-cdp-ajo-b2c-tag-structure-sketch.md`](aep-cdp-ajo-b2c-tag-structure-sketch.md) |
 
@@ -108,7 +109,57 @@ Full paste + screenshot: [`transactional-unitary-event-settings.md`](transaction
 
 ---
 
-## 4. Side-by-side (build view)
+## 4. Exit criteria (required for nurture / release)
+
+**Job:** Experience Pattern **release** — stop further messaging from *this* journey when the purpose is met (or the person is no longer relevant).  
+**UI:** Journey canvas → **Show Exit criteria** → Add exit criteria → Label + type.  
+**Docs:** [Journey properties — Exit criteria](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/create-journey/journey-properties) · [Entry & exit guide](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/journey-use-cases/entry-exit-criteria-guide)  
+**Expansion depth:** parking lot **PA-08** (still useful for pattern examples).
+
+### Types
+
+| Type | When to use | Notes |
+|---|---|---|
+| **Event** | True conversion / lifecycle signal | **Unitary only** (e.g. trial started). IT builds the unitary; DA wires exit to it. |
+| **Audience** | Membership = “converted / purchased / left program” | Can take ~10 min to be effective after qualify |
+| **Profile attribute** | Special case | **Paused journeys only**; one rule per journey; evaluated at **action** steps |
+
+Multiple Event/Audience criteria = **OR**, evaluated at every step. Configure in draft. Stops further communications from that journey when met.
+
+### Build rules by comm class
+
+| Comm class | Exit criteria requirement |
+|---|---|
+| **Promo — scheduled nurture** | **Required** whenever there is a clear release KPI (trial started, intent fulfilled, unsubscribed). Prefer **Event** exit when a unitary exists; else Audience. |
+| **Promo — streaming fallout (AQ)** | **Required** for Abandonment-style — exit on trial started (or equivalent) so Welcome/txn does not stack with abandon emails. |
+| **Transactional (unitary)** | Usually **natural end** after the sequence; add exit only if a later signal should cut remaining steps (rare). |
+
+### Vs Jump
+
+| | Exit criteria | Jump |
+|---|---|---|
+| Meaning | Leave **this** journey | Fork into another journey (can stay dual-active) |
+| Nurture → Trial Start | **Prefer** exit nurture + unitary entry to Trial Start | Do **not** Jump from Read Audience; Jump only event↔event with terminate-style intent |
+
+### RH examples
+
+| Pattern | Exit idea |
+|---|---|
+| RHEL Abandonment / Learn Deep | Unitary **trial started** (or Audience equivalent until unitary is live) |
+| OpenShift Pre-purchase | Trial start / intent-fulfilled / product commit |
+| Partner newsletter | Optional: “left partner program” / unsubscribed audience |
+
+### Author checklist
+
+- [ ] Release KPI named on the Experience Pattern (catch **and** exit)  
+- [ ] Exit type chosen (Event / Audience / Profile attribute) and matches available data  
+- [ ] If Event: unitary exists (IT-built) and is selected  
+- [ ] Confirmed **not** substituting Jump for release from a Read Audience shell  
+- [ ] Audience exits: lag expectations documented (~10 min)
+
+---
+
+## 5. Side-by-side (build view)
 
 | Topic | Promotional (scheduled) | Transactional |
 |---|---|---|
@@ -117,21 +168,22 @@ Full paste + screenshot: [`transactional-unitary-event-settings.md`](transaction
 | Entry activity | Read Audience | Unitary event |
 | Namespace | `b2b_person` (Persons promo ref) | `b2b_person` (pilot unitary) |
 | Jump on this journey | No | Possible (event↔event only; use sparingly) |
-| Typical exit | Exit criteria / conversion event | End of email sequence |
+| **Exit criteria** | **Required** for release KPI (Event preferred) | Usually end of sequence |
 | Caps / quiet hours | Channel marketing rule set candidate | Usually exempt |
 | Golden reference | RHEL Learn Deep Read Audience | Pilot unitary event (MARTECHCBP-9868) |
 
 ---
 
-## 5. Gaps to close (build track only)
+## 6. Gaps to close (build track only)
 
 - [ ] Confirm live Abandonment = AQ vs Read Audience (handbook still notes both shapes)
 - [x] Pilot unitary event settings captured (rule-based, B2B Activity v.1, `b2b_person`, offerID condition) — [`transactional-unitary-event-settings.md`](transactional-unitary-event-settings.md)
 - [x] **R&R:** New unitary events (schema / dataset / streaming / event config) are **built by IT** — DA authors request via template; do not treat missing dataset IDs in Journeys payload samples as a DA fill task
+- [x] **Exit criteria** elevated to journey build requirement (§4) — confirm live Abandonment / Learn Deep exits in sandbox
 - [ ] Written rule: which Channel rule sets attach to promo vs transactional email actions
 - [ ] Sync this contract into handbook §2.5.x when stable; then Q1 BP pack ([`ajo-permissions-user-onboarding-q1-sketch.md`](ajo-permissions-user-onboarding-q1-sketch.md))
 
 ---
 
 **Created:** 2026-11-18  
-**Last updated:** 2026-11-18 — transactional unitary reference from sandbox screenshot
+**Last updated:** 2026-11-18 — Exit criteria added as journey build requirement (§4)

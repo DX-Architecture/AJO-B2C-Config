@@ -42,11 +42,11 @@ Use this when work feels scattered. Everything in the binder maps to **one** of 
 **Entry model why:** parking lot **PA-04** (analysis) — build checklist lives in track 2, not the parking lot  
 **Handbook:** Digital Architecture Handbook Ch2 (not in this repo) §2.2 (types) · §2.5.2 (promo Read Audience)
 
-| Comm class | Typical RH example | Entry |
-|---|---|---|
-| **Promotional** (scheduled nurture) | Learn Deep / OpenShift pre-purchase shell | **Read Audience** |
-| **Promotional** (streaming fallout) | Abandonment (if AQ) | **Audience Qualification** |
-| **Transactional** | Trial Start Welcome / Expiring / Survey | **Unitary event** |
+| Comm class | Typical RH example | Entry | Exit criteria |
+|---|---|---|---|
+| **Promotional** (scheduled nurture) | Learn Deep / OpenShift pre-purchase shell | **Read Audience** | **Required** if release KPI (build §4) |
+| **Promotional** (streaming fallout) | Abandonment (if AQ) | **Audience Qualification** | **Required** (e.g. trial started) |
+| **Transactional** | Trial Start Welcome / Expiring / Survey | **Unitary event** | Usually natural end of sequence |
 
 ---
 
