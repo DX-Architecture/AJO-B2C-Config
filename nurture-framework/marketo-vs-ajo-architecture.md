@@ -45,6 +45,26 @@ Experience Pattern
 
 ---
 
+## Architecture pain → AJO capability
+
+| Current Marketo architecture pain | AJO B2C elevation | Horizon |
+|---|---|---|
+| Siloed nurture vs transactional trial emails | One B2C journey layer: promo shell + unitary Trial Start | Live — RHEL pilot |
+| Email and Target PZN planned separately on experience maps | Same abandonment/trial moment: AJO email + Target offer | Live — deepen with Decisioning |
+| Clone programs for persona / event / SKU variants | Dynamic content + Decisioning catalog (items/policies) | Q4 discovery · CY27 (PA-06 OpenShift, Event Modernization) |
+| No cross-journey winner when patterns collide | Journey capping + arbitration; priority scores ↔ Experience Patterns | Q4 Focus Areas · PA-02 / PA-03 |
+| Release KPI not enforced as hard stop | Exit criteria (event / audience / attribute) = framework release | PA-08 · pattern hygiene |
+| Creative velocity + Marketo-only reporting | GenStudio → AJO → CJA vs Marketo baselines | Live measurement track |
+| Event-related patterns “nets only / not full support” | Event catalog on profile + one post-event journey + Decisioning | Q4 event catalog → CY27 Event Modernization |
+
+### What Decisioning does (and does not) change
+
+Decisioning elevates **content mix** inside a pattern. It does **not** replace Experience Patterns, stage ownership, journey capping, or Target Recommendations for huge catalogs.
+
+**Pattern:** Journey = cadence · Decisioning = which offer/content block · Event/profile data = who qualifies.
+
+---
+
 ## Dimension comparison
 
 | Dimension | Marketo (current) | AJO B2C (elevate) |

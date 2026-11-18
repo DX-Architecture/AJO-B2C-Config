@@ -28,7 +28,7 @@ How the **CY26 Omnichannel Nurture Framework** (stages, Experience Patterns, Net
 
 | Doc | Purpose |
 |---|---|
-| [`marketo-vs-ajo-architecture.md`](marketo-vs-ajo-architecture.md) | Dual-runtime coexistence + excludes |
+| [`marketo-vs-ajo-architecture.md`](marketo-vs-ajo-architecture.md) | Dual-runtime coexistence + excludes · pain → AJO capability |
 | [`experience-pattern-migration-order.md`](experience-pattern-migration-order.md) | Which patterns move to AJO first |
 | [`nets-ladders-catapults-ajo.md`](nets-ladders-catapults-ajo.md) | Framework pillars → AJO journey types |
 
